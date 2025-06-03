@@ -1,0 +1,1082 @@
+\chapter{DÉPENDANCE, RÉDUCTION ET FILTRATIONS BONNES}
+\chaptermark{DÉPENDANCE, RÉDUCTION ET FILTRATIONS BONNES}
+
+Après avoir étudier les propriétés des filtrations I-bonnes, nous verrons dans ce chapitre les conditions pour étendre ces propriétés aux filtrations bonnes en générale.
+\section{Dépendance intégrale de filtration}
+\begin{madefinition}
+	Soient $A$ un anneau commutatif unitaire, $I$ un idéal de $A$\\
+	et $f=(I_n)_{n\in \mathbb{N}} $ appartenant à $ \mathbb{F}(A)$. Un élément $x$ de $A$ est dit entier sur $f$ s'il existe un entier $m \in \mathbb{N}$ tel que 
+	\[ 	x^m + a_1 x^{m-1} + \cdots + a_m = x^m + \sum_{i=1}^{m} a_i x^{m-i} = 0, \; m \in \mathbb{N^*} \ , \ a_i \in I_i,\, \forall i=1, \cdots ,m. \]	
+\end{madefinition}
+\begin{maproposition}
+	\label{maprop1}
+	Soit $f=(I_n)_{n \in \mathbb{N}} $ appartenant à $ \mathbb{F}(A), x $ appartenant à $ A $ et $n $ appartenant à $ \mathbb{N}$.\\
+	Les assertions suivantes sont équivalentes: 
+	\begin{enumerate}
+		\item[i)] $x$ est entier sur $f^{(k)}=((I_{nk})_{k \in \mathbb{N}^*})$;
+		\item[ii)] $xX^n(\in A[X])$ est entier sur $R(A,f)$;
+		\item[iii)] $xX^n(\in A[X])$ est entier sur $ \mathcal{R}(A,f)$.
+	\end{enumerate}
+	\begin{proof}
+		i)$\implies$ ii)
+		
+		Supposons $x$ entier sur $f^{(n)}$.
+		
+		Alors \\ 
+		$\exists$  $r\geq 1,$ $x^{r}+\sum\limits_{i=1}^{r}a_{i}x^{r-i}=0,$ $a_{i}\in I_{ni}$.
+		
+		Ainsi \\
+		$\exists$  $r\geq 1,$ $(xX^{n})^{r}+\sum
+		\limits_{i=1}^{r}a_{i}X^{ni}(xX^{n})^{r-i}=0,$ $a_{i}\in I_{ni} X^{ni} \subset R(A,f)$.
+		
+		Donc $xX^{n}$ est entier sur $R(A,f).$ \\
+		
+		ii)$\implies$ iii) Évident car $R(A,f)$ est contenu dans $  \mathcal{R}(A,f).$ \\
+		iii)$\implies$ i) Supposons $xX^{n}$ est entier sur $\mathcal{R}(A,f).$
+		
+		Alors \\ $\exists$  $m\geq 1,$ $(xX^{n})^{m}+\sum\limits_{i=1}^{m}a_{i}(xX^{n})^{m-i}=0,$ $a_{i}\in \mathcal{R}(A,f)$.
+		
+		D'où \\ $\deg ((xX^{n})^{m})=nm$ alors $\deg (a_{i})=ni.$
+		
+		Ainsi \\ $a_{i}\in I_{ni}X^{ni},$ alors $a_{i}=\alpha _{i}X^{ni}$ ,$\alpha _{i}\in I_{ni}$.
+		
+		Donc \\ $\exists$  $m\geq 1,$ $(xX^{n})^{m}+\sum\limits_{i=1}^{m}(\alpha
+		_{i}X^{ni})(xX^{n})^{m-i}=0,$ $\alpha _{i}\in I_{ni}$.
+		
+		Alors\\ $\exists$  $m\geq 1,$ $X^{nm}[x^{m}+\sum\limits_{i=1}^{m}\alpha
+		_{i}x^{m-i}]=0X^{nm},$ $\alpha _{i}\in I_{ni}$.
+		
+		Par identification\\ $\exists$  $m\geq 1,$ $ x^{m}+\sum\limits_{i=1}^{m}\alpha _{i}x^{m-i}=0,\alpha _{i}\in I_{ni}$.
+		
+		Par suite, $x$ est entier sur $f^{(n)}$.
+	\end{proof}
+\end{maproposition}
+\section{Clôture intégrale d'une filtration}
+\begin{madefinition_proposition}
+	Soit $f=(I_n)_{n\in \mathbb{N}} $ appartenant à $ \mathbb{F}(A).$ Alors:\\
+	$f'=(I'_n)_{n\in \mathbb{N}} $ appartenant à $ \mathbb{F}(A)$ appelée \textbf{clôture intégrale de f}.
+\end{madefinition_proposition}
+\begin{proof}
+	Supposons que $f=(I_{n})_{n\in \mathbb{N}}$ appartenant à $ F(A).$
+	
+	i) $I_{0}^{\prime }=\{x\in A,x$ entier sur $I_{0}\}=A$, car $I_{0}=A$ $.$
+	
+	ii) Soit $n$ appartenant à $ \mathbb{N}.$
+	Comme $I_{n+1}$ est contenu dans $  I_{n}$ alors par croissance, $I_{n+1}^{\prime }$ est contenu dans $ I_{n}^{\prime }.$
+	
+	iii) Soient $p,q$ appartenant à $ \mathbb{N}.$ \\
+	$I_{q}^{\prime }I_{p}^{\prime }\subset (I_{q}I_{p})^{\prime }\subset (I_{p+q})^{\prime }=I_{p+q}^{\prime }$ car $I^{\prime }J^{\prime }\subset (IJ)^{\prime }$ pour tout idéaux de $A.$
+	
+	Par suite $f^{\prime }=(I_{n}^{\prime })_{n\in \mathbb{N}}$ appartenant à $ \mathbb{F}(A).$
+\end{proof}
+\begin{moncorollaire}
+	Soit $f=(I_n)_{n \in \mathbb{N}} $ appartenant à $ \mathbb{F}(A)$. Alors:\\
+	$\text{ pour tout } k $ appartenant à $ \mathbb{N}, \text{ on pose: } P_k(f)=\left\{x \in A, x \text{ entier sur } f^{(k)}\right\}$ est un idéal de $A$ et la famille \\ $P(f)=(P_k(f))_{k \in \mathbb{N}}$ est une filtration de $A$ appelé \textbf{clôture prüférienne} de $f$.
+\end{moncorollaire}
+\begin{proof}
+	Soit $k$ appartenant à $ \mathbb{N}.$ \\
+	A) Montons que $P_{k}(f)$ est un idéal de $A$.
+	
+	i) Par définition, $P_{k}(f)$ est contenu dans $ A.$
+	
+	ii) $0_{A}$ est entier sur $A,$ donc $0_{A}$ appartient à $ P_{k}(f)$.
+	
+	iii) Soient $x,y$ appartenant à $ P_{k}(f).$
+	
+	Comme $x,y$ appartiennent à $ P_{k}(f)$ alors $xX^{k},yX^{k}$ sont entiers sur $R(A,f)$.
+	
+	D'où $xX^{k}+yX^{k}$ est entier sur $R(A,f)$ car $R(A,f)^{\prime }$ est
+	un anneau.
+	
+	Donc $x+y$ est entier sur $f^{(k)}$.
+	
+	Par suite $x+y$ appartiennent à $ P_{k}(f).$
+	
+	iv) Soit $a$ appartenant à $ A,$ soit $x$ appartenant à $ P_{k}(f).$
+	
+	$x$ appartient à $ P_{k}(f)$ alors $xX^{k}$ est entier sur $R(A,f).$
+	
+	$(ax)X^{k}$ est entier sur $R(A,f)$.
+	
+	Donc $ax$ est entier sur $f^{(k)}$.
+	
+	D'où $ax$ appartient à $ P_{k}(f)$.
+	
+	Par suite $P_{k}(f)$ est un idéal de $A.$ \\
+	B) Montrons que $P(f)=(P_{k}(f))_{k\in \mathbb{N}}$ appartient à $ \mathbb{F}(A)$.
+	
+	i) $P_{0}(f)=\{x\in A,$ $x$ entier sur $f^{(0)}=(A,...,A)=A\}$.
+	
+	D'où $P_{0}(f)=A$.
+	
+	ii) Soit $x$ appartenant à $ P_{k+1}(f).$
+	
+	Ainsi $x$ est entier sur $f^{(k+1)}.$
+	
+	Alors \\ $\exists$  $n\geq 1,$ $x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0,$ $
+	a_{i}\in I_{(k+1)i}\subset I_{ki}$.
+	
+	Donc $x$ est entier sur $f^{(k)}$.
+	
+	Par suite $x$ appartient à $ P_{k}(f).$
+	
+	D'où $P_{k+1}(f)$ est contenu dans $ P_{k}(f).$
+	
+	iii) Soient $x$ appartenant à $ P_{k_{1}}(f)$ et $y$ appartenant à $ P_{k_{2}}(f)$.
+	
+	$xX^{k_{1}}$ appartient à $ R(A,f)^{\prime }$ et $yX^{k_{2}}$ appartient à $ R(A,f)^{\prime }.$
+	
+	D'où $xyX^{k_{1}+k_{2}}$ appartient à $ R(A,f)^{\prime }$ car $R(A,f)^{\prime }$ est un anneau.
+	
+	Donc $xy$ appartient à $ P_{k_{1}+k_{2}}(f)$.
+	
+	Par suite, $P_{k_{1}}(f)$ $P_{k_{2}}(f)$ est contenu dans $ P_{k_{1}+k_{2}}(f).$
+	
+	On en déduit que $P(f)=(P_{k}(f))_{k\in \mathbb{N}}$ appartenant à $ F(A).$
+\end{proof}
+\begin{maremarque}
+	La clôture intégrale d'un idéal $I$ de $A$ est : $I'=P_1(f_I)$.
+\end{maremarque}
+\begin{maproposition}
+	Soit $f=(I_n)_{n \in \mathbb{N}} $ appartenant à $ \mathbb{F}(A)$. Alors:
+	\begin{enumerate}
+		\item[(i)] $ f \leqslant f' \leqslant P(f)$;
+		\item[(ii)] $ P(P(f)) = P(f)$;
+		\item[(iii)] $P(f) = P(f')$, avec $f'=(I'_n)_{n \in \mathbb{N}}$ est la clôture intégrale de $f$.
+	\end{enumerate}
+\end{maproposition}
+\begin{proof}
+	i) Il s'agit de montrer que pour tout $n$ appartenant à $ \mathbb{N},$ $I_{n}\subset I_{n}^{\prime }\subset P_{n}(f)$.
+	
+	Soit $n$ appartenant à $ \mathbb{N}.$ \\
+	a) Soit $x$ appartenant à $ I_{n}.$
+	
+	Posons $r=1$.\\
+	Ainsi $x+a_{1}=x+(-x)=0,$ $a_{1}=-x$.
+	
+	Alors $x$ appartient à $ I_{n}^{\prime }.$ D'où $I_{n}$ est contenu dans $ I_{n}^{\prime }.$
+	
+	b) Soit $x$ appartenant à $ I_{n}^{\prime }.$
+	
+	Soit $n$ appartenant à $ \mathbb{N}.$
+	$x$ appartient à $ I_{n}^{\prime }$ alors \\ $\exists$  $r\geq 1,$ $x^{r}+\sum\limits_{i=1}^{r}a_{i}x^{r-i}=0,\alpha _{i}\in I_{n}^{i}$.
+	
+	Or $I_{n}^{i}$ est contenu dans $ $ $I_{ni}$ , d'où \\ $\exists$  $m=r\geq 1,$ $x^{m}+\sum\limits_{i=1}^{m}\alpha _{i}x^{m-i}=0,\alpha _{i}=a_{i}\in I_{ni}$.\\
+	D'où $x$ appartenant à $ P_{n}(f)$.
+	
+	Donc $I_{n}^{\prime }$ est contenu dans $ P_{n}(f)$.
+	
+	Par conséquent, pour tout $n$ appartenant à $ \mathbb{N},$ $I_{n}\subset I_{n}^{\prime }\subset P_{n}(f).$
+	
+	c'est-\`{a}-dire que $f\leq f^{\prime }\leq P(f)$.
+	
+	ii) Montrons que $P(P(f))=P(f).$
+	
+	A) D'après i), $f\leq P(f)\text{ alors } P(f)\subset P(P(f))$.
+	
+	B) Posons $g=P(f)=(J_{n})_{n\in \mathbb{N}}$ avec $J_{n}=P_{n}(f)$.
+	
+	Donc $P(P(f))=P(g)$.
+	
+	Soient $n$ appartenant à $ \mathbb{N},x$ appartenant à $ P_{n}(g).$
+	
+	$x$ appartient à $ P_{n}(g)$ alors $x$ est entier sur $g^{(n)}$.
+	
+	$x\in P_{n}(g)$ alors \\ $\exists$  $s\geq 1,$ $x^{s}+\sum\limits_{i=1}^{s}a_{i}x^{s-i}=0,a_{i}\in J_{ni}$.
+	
+	Or $J_{ni}=P_{ni}(f)$ , ainsi $a_{i}\in P_{ni}(f)$ pour tout $i\in \llbracket 1, s \rrbracket.$
+	
+	Ainsi les $a_{i}$ sont entiers sur $f^{(ni)}.$ D'où $a_{i}X^{ni}\in R(A,f)^{\prime }$.
+	
+	Alors $(xX^{n})^{s}+\sum\limits_{i=1}^{s}a_{i}X^{ni}(xX^{n})^{s-i}=0,$ avec 
+	$a_{i}X^{ni}\in R(A,f)^{\prime }$.
+	
+	Donc $xX^{n}$ est entier sur $R(A,f)^{\prime }$.
+	
+	D'où $xX^{n}\in \lbrack R(A,f)^{\prime }]^{\prime }=R(A,f)^{\prime }$.
+	
+	Par suite $xX^{n}$ est entier sur $R(A,f)$.
+	
+	Donc $x$ est entier sur $f^{(n)}$.
+	
+	Par suite $x\in P_{n}(f).$
+	
+	D'où $P_{n}(g)$ est contenu dans $ P_{n}(f).$
+	
+	c'est-\`{a}-dire $P(P(f))$ est contenu dans $ P_{n}(f).$ Donc $P(P(f))=P_{n}(f).$
+	
+	iii) Montrons que $P(f)=P(f^{\prime })$.
+	
+	D'après i) on a $f\leq f^{\prime }\text{ alors } P(f)\leq P(f^{\prime })$.
+	
+	Réciproquement, $f^{\prime }\leq P(f)\text{ alors } P(f^{\prime })\leq
+	P(P(f))=P(f)$.
+	
+	D'où $P(f)\leq P(f^{\prime })\leq P(f)$.
+	
+	Par suite $P(f)=P(f^{\prime })$.
+\end{proof}
+
+%\begin{maproposition}
+%	Soit $f=(I_n)_{n \in \mathbb{N}} \in \mathbb{F}(A)$. Alors:\\
+%	\begin{enumerate}
+%		\item[(i)] $x \in P_k(f)$ si et seulement si $xX^k$ est entier sur $R(A,f)$;
+%		\item[(ii)] $ I_k \subset P_k(f) \subset \sqrt[]{f}$ et en particulier $\ \sqrt[]{(P(f))} = \sqrt[]{f}$.
+%	\end{enumerate}
+%\end{maproposition}
+\begin{maproposition}
+	Soient $A $ contenu dans $ B$ deux anneaux.\\
+	$A' =\left\{x \in B, x\text{ entier sur } A\right\}$. On a:
+	\begin{enumerate}
+		\item[i)] $A \subset A' \subset B $;
+		\item[ii)] $A'' = A'$.
+	\end{enumerate}
+\end{maproposition}
+\begin{proof}
+	i) Montrons que $A\subset A^{\prime }\subset B$.
+	
+	a) Soit $x\in A.$
+	
+	On a: $x^{1}+a_{1}=x^{1}+(-x)=0\text{ alors } x\in A^{\prime }.$
+	
+	Donc $A$ est contenu dans $ A^{\prime }.$
+	
+	b) Soit $x^{\prime }\in A^{\prime }.$ 
+	
+	Par construction $x\in B.$
+	
+	D'où $A^{\prime }$ est contenu dans $ B.$
+	
+	Par suite $A \subset A^{\prime }\subset B$.
+	
+	ii) D'après i) $A\subset A^{\prime }\text{ alors } A^{\prime }\subset
+	A^{\prime \prime }$ (Par croissance).
+	
+	Réciproquement soit $x\in A^{\prime \prime }\text{ alors } x$ entier sur $
+	A^{\prime }$.
+	
+	Ainsi \\ $\exists$  $n\geq 1,$ tel que  $x^{n}+\sum
+	\limits_{i=1}^{n}a_{i}x^{n-i}=0,a_{i}\in A^{\prime }.$
+	
+	Alors $a_{i}$ entier sur $A,$ pour tout $i\in \llbracket 1, n \rrbracket.$
+	
+	D'où $A[a_{i}]$ est un $A$-module de type fini, ainsi $A[a_{1},a_{2},...,a_{n}]$ est un A-module de type fini.
+	
+	En effet, si,
+	
+	$\left\{ 
+	\begin{array}{c}
+		A[a_{1}]=A(1_{A},a_{1},a_{1}^{2},...a_{1}^{n-1}) \\ 
+		A[a_{2}]=A(1_{A},a_{2},a_{2}^{2},...a_{2}^{m-1})
+	\end{array}
+	\right. $
+	
+	des A-modules de type fini, alors 
+	
+	$A[a_{1},a_{2}]=A(a_{1}^{i}a_{2}^{j})_{\substack{ 0\leq i\leq n-1 \\ 0\leq
+			j\leq m-1}}$.
+	
+	En procédant de proche en proche, il vient $A[a_{1},a_{2},...,a_{n}]$
+	est un A-module de type fini.
+	
+	Par suite, $K=A[a_{1}x^{n-1},a_{2}x^{n-2},...,a_{n}]$ est un A-module de
+	type fini.
+	
+	Soient $(y_{1},...,y_{n})$ les générateurs de $K.$
+	
+	Donc $K=A(y_{1},...,y_{n},x^{n-1},x^{n-2},...,x^{2},x,1)$.
+	
+	D'où $A[x]$ est contenu dans $ H.$
+	
+	Par suite $x$ est entier sur $A$.
+	
+	Donc $x\in A^{\prime }$.
+	
+	Par suite $A^{\prime \prime }$ est contenu dans $ A$.
+	
+	Donc  $A^{\prime \prime }=A$.
+	
+	iii) De la même manière, on montre que $I^{\prime \prime }=I^{\prime}.$
+\end{proof}
+\begin{madefinition}
+	Soit $I$ un idéal de l'anneau $A$ et $f $ appartenant à $ \mathbb{F}(A)$. \\
+	On dit que $I$ est entier sur $f$ si tout élément de $I$ est entier sur $f$. \\
+	Ce qui signifie que I est entier sur $f$ si $I $ est contenu dans $ P_1(f)$.
+\end{madefinition}
+\begin{maconsequence}
+	Soit $I$ un idéal de l'anneau $A$ et $f \in \mathbb{F}(A)$. \\
+	$I$ est entier sur $f$ si et seulement si $f_I \leqslant P(f)$.
+\end{maconsequence}
+\begin{proof}
+	$(ii)\Longrightarrow (i)$.
+	
+	Supposons que $f_{I}\leq P(f).$ Alors $I^{n}$ est contenu dans $ P_{n}(f),$ pour tout $n\geq 1.$
+	
+	En particulier pour $n=1,$ on a $I$ est contenu dans $ P_{1}(f).$ Donc $I$ est entier sur $f.$
+	
+	$(i)\Longrightarrow (ii)$.
+	
+	Supposons que $I$ est entier sur $f.$ Alors $I$ est contenu dans $ P_{1}(f).$ Montrons que $I^{n}$ est contenu dans $ P_{n}(f),$ pour tout $n\geq 1.$
+	
+	\textbf{Initialisation}
+	
+	Comme $I$ est contenu dans $ P_{1}(f)$ alors la propriété est vrai à l'ordre 1.
+	
+	\textbf{Hérédité}
+	
+	Soit $n\geq 1.$ Supposons que la propriété est vraie jusqu'à l'ordre $n$, c'est à dire $I^{n}$ est contenu dans $ P_{n}(f).$
+	
+	Montrons que la propriété est vraie jusqu'à l'ordre $n+1$, c'est à dire $I^{n+1}$ est contenu dans $ P_{n+1}(f).$
+	
+	On a: $I^{n}\subset P_{n}(f)\Longrightarrow I^{n+1}\subset
+	IP_{n}(f)\subset P_{1}(f)P_{n}(f)\subset P_{n+1}(f)$ (car $
+	(P_{n}(f))_{n\in \mathbb{N}}\in \mathbb{F}(A)$).
+	
+	D'où $I^{n+1}\subset P_{n+1}(f).$
+	
+	Donc la propriété est vraie jusqu'à l'ordre $n+1.$
+	
+	Par suite $I^{n}\subset P_{n}(f),$ pour tout $n\geq 1.$ Par conséquent $f_{I}\leq P(f)$.
+\end{proof}
+
+\begin{madefinition}
+	Soit $f=(I_n)_{n \in \mathbb{N}} , g = (J_n)_{n \in \mathbb{N}}$ appartenant à $ \mathbb{F}(A)$.  Alors:\\
+	\begin{enumerate}
+		\item[(a)]$g$ est \textbf{entière sur} $f$ si $g \leqslant P(f)$. C'est à dire:
+		\[\forall n \geqslant 1, J_n \subset P_{n}(f). \]
+		\item[(b)]$g$ est \textbf{fortement entière sur} $f$ si $f \leqslant g$ et si $R(A,g)$ est un $R(A,f)-module$ de type fini.
+	\end{enumerate}
+\end{madefinition}
+\begin{maproposition}
+	\label{maprop2}
+	Soient $f$ et $g$ deux filtrations de l'anneau $A$ telles que $f \leqslant g$.\\ Alors $R(A,g)$ est entier sur $R(A,f)$ si et seulement si $\mathcal{R}(A,g)$ est entier sur $\mathcal{R}(A,f)$. 
+\end{maproposition}
+\begin{proof}
+	Soient $f=(I_n)_{n \in \mathbb{N}},g=(J_n)_{n \in \mathbb{N}}$ deux filtrations de $A$ telles que $f \leqslant g$. \\ Supposons que $\mathcal{R}(A,g)$ est entier sur $\mathcal{R}(A,f)$. \\
+	Soit $b \in J_n$ alors $bX^n \in \mathcal{R}(A,g)$ est entier sur $\mathcal{R}(A,f)$ d'après \ref{maprop1}, on a $bX^n$ entier sur $R(A,f)$. Par conséquent $R(A,g)$ est entier sur $R(A,f)$.
+	Réciproquement, il suffit de remarquer que $\mathcal{R}(A,f)=R(A,f)[u]$ qui est une algèbre de type fini sur $R(A,f)$.
+\end{proof}
+\begin{maproposition}
+	Soient $f,g$ deux filtrations de $A$ telles que $f \leqslant g$. Alors les assertions suivantes sont équivalentes:
+	\begin{enumerate}
+		\item[(i)] $g$ est entière sur $f$;
+		\item[(ii)] $R(A,g)$ est entier sur $R(A,f)$;
+		\item[(iii)] $\mathcal{R}(A,g)$ est entier sur $\mathcal{R}(A,f)$.
+	\end{enumerate}
+\end{maproposition}
+\begin{proof}
+	(i) $\Longleftrightarrow$ (ii), immédiat en utilisant la proposition \ref{maprop1}. \\
+	(ii) $\Longleftrightarrow$ (iii), immédiat en utilisant la proposition \ref{maprop2}.
+\end{proof}
+\begin{maproposition} \cite{Di2} \\
+	Soient $f,g$ deux filtrations de $A$. Alors les assertions suivantes sont équivalentes:
+	\begin{enumerate}
+		\item[(i)] $g$ est entière sur $f$;
+		\item[(ii)] $\forall k \geqslant 1$, $g^{k}$ est entière sur $f^{(k)}$;
+		\item[(iii)] $\exists k \geqslant 1$, $g^{k}$ est entière sur $f^{(k)}$.
+	\end{enumerate}
+\end{maproposition}
+\begin{proof}
+	Soient $f=(I_n)_{n \in \mathbb{N}},g=(J_n)_{n \in \mathbb{N}}$ deux filtrations de $A$. \\
+	$(i)\Longrightarrow (ii)$.
+	
+	Supposons que $g$ est entière sur $f.$ Montrons que pour tout $k\geq 1,$ $g^{(k)}$ est entière sur $f^{(k)}.$
+	
+	Soit $k\geq 1,$ on a: $f^{(k)}=(I_{nk})_{n\in \mathbb{N}}$ et $g^{(k)}=(J_{nk})_{n\in \mathbb{N}}$.
+	
+	Comme $g$ est entière sur $f$ alors l'idéal $J_{nk\text{ }}$est entier sur $f^{(nk)}.$
+	
+	Or $f^{(nk)}=(f^{(k)})^{(n)}$ donc $J_{nk}$est entier sur $(f^{(k)})^{(n)}.$
+	
+	Par conséquent $g^{(k)}$ est entière sur $f^{(k)}$ pour tout $k\geq 1.$
+	
+	$(ii)\Longrightarrow (iii)$ immédiat.
+	
+	$(iii)\Longrightarrow (i)$.
+	
+	Supposons qu'il existe $k$ supérieur ou égal à 1 tel que $g^{(k)}$ est entière sur $f^{(k)}$. Montrons que $g$ est entière sur $f.$
+	
+	Pour cela il suffit de montrer que pour tout $p\geq 1,$ l'idéal $J_{p}$ est entier sur $f^{(p)}.$
+	
+	Soit $x\in $ $J_{p}.$ Alors $x^{k}$ $\in $ $J_{p}^{k}\subset J_{pk}.$
+	
+	Or $J_{pk}$ est entier sur $f^{(pk)}=(f^{(k)})^{(p)}$. D'où il existe $n\in \mathbb{N}^{\ast }$ tel que:
+	
+	$(x^{k})^{n}+a_{1}(x^{k})^{n-1}+\cdots +a_{j}(x^{k})^{n-j}+\cdots +a_{n}=0,$ avec $a_{j}\in I_{pkj}.$
+	
+	On a pour tout $j=1,\cdots ,n$ , $a_{j}(x^{k})^{n-j}=a_{j}x^{kn-kj},$ ainsi $x^{kn}+a_{1}x^{kn-k}+\cdots +a_{j}x^{kn-kj}+\cdots +a_{n}=0,$ avec $a_{j}\in I_{pkj}.$
+	
+	Posons $m=kn.$ On obtient $x^{m}+a_{1}x^{m-k}+\cdots +a_{j}x^{m-kj}+\cdots +a_{n}=0,$ avec $a_{j}\in I_{p(kj)}.$
+	
+	Par suite $x$ est entier sur $f^{(p)}$pour tout $p\geq 1.$ Par conséquent pour tout $p\geq 1$ $J_{p}$ est entier sur $f^{(p)}.$
+	
+	Donc $g$ est entière sur $f.$
+	
+\end{proof}
+
+\section{Réduction d'une filtration}
+\subsection{Réduction au sens de Okon-Ratliff}
+\begin{madefinition}
+	($\alpha$-réduction ou réduction au sens de Okon-Ratliff\cite{Ok} )\\
+	Soient $f=(I_n)_{n \in \mathbb{N}}$, $g=(J_n)_{n \in \mathbb{N}}$ deux filtrations de $A$.\\
+	$f$ est une $\alpha$-réduction de $g$ si :
+	\begin{enumerate}
+		\item[i)] $f \leq g$;
+		\item[ii)] $\exists \, N \geq 1$ , $\forall n \geq N , J_n = \displaystyle \sum_{p=0}^{N}{I_{n-p} J_p}$.
+	\end{enumerate}
+\end{madefinition}
+\begin{maremarque}
+	Soit $\Re$ la relation $f \Re g \Leftrightarrow$ $f$ est une $\alpha$-réduction de $g$. Notons que cette relation est une relation d'ordre sur l'ensemble des filtrations.	
+\end{maremarque}
+\begin{proof}
+	(i) \textbf{Réflexivité}. \\
+	Posons $N=1$. \\
+	$\displaystyle \sum_{p=0}^{1}I_{n-p}I_{p}=I_{n}I_{0}+I_{n-1}I_{1}=I_{n-1}I_{1}=I_{n}$ (car $I_{0}\subset I_{1}$).
+	
+	D'où $f \Re f$. \\
+	(ii) \textbf{Transitivité}. \\
+	Soient $f=(I_{n})_{n\in \mathbb{N}}$ $,g=(J_{n})_{n\in \mathbb{N}}$ $,h=(H_{n})_{n\in \mathbb{N}}$ \ des filtrations de $A.$ \\
+	Supposons que $f \Re g$.
+	alors $f\leq g$ et il existe $N_{1}\geq 1,\text{ pour tout } m\geq N_{1},$ $J_{m}=\displaystyle  \sum_{p=0}^{N_{1}}I_{m-p}J_{p}$.
+	Supposons que $g \Re h$ alors $g\leq h$ et il existe $N_{2}\geq 1,\text{ pour tout } k\geq N_{2},$ $H_{k}=\displaystyle  \sum_{p=0}^{N_{2}}J_{k-p}H_{p}$.\\
+	D'où $f\leq g\leq h.$ Donc $f\leq h$. \\
+	De plus posons $N=N_{1}+N_{2}$. \\
+	$H_{k}=\displaystyle  \sum_{p=0}^{N_{2}}J_{k-p}H_{p}+\displaystyle  \sum_{p=N_{2}+1}^{N}J_{k-p}H_{p}=\displaystyle  \sum_{p=0}^{N_{2}}J_{k-p}H_{p}+\displaystyle  \sum_{p=N_{2}+1}^{N_{1}+N_{2}}J_{k-p}H_{p}$ pour tout $k\geq N_{1}+N_{2}$. \\
+	Comme $k\geq N_{1}+N_{2}$ alors $k-N_{2}\geq N_{1}$ et $p\leq N_{2}$ alors $k-p\geq N_{1}$. \\
+	D'où $J_{k-p}=\displaystyle  \sum_{i=0}^{N_{1}}I_{k-p-i}J_{i}$. \\
+	Ainsi $H_{k}=\displaystyle  \sum_{p=0}^{N_{2}}(\displaystyle  \sum_{i=0}^{N_{1}}I_{k-p-i}J_{i})H_{p}+\displaystyle  \sum_{p=N_{2}+1}^{N_{1}+N_{2}}J_{k-p}H_{p}$. \\
+	Donc $H_{k}\subset \displaystyle  \sum_{p=0}^{N_{2}}\displaystyle  \sum_{i=0}^{N_{1}}I_{k-p-i}J_{i}H_{p+i}+\displaystyle  \sum_{p=N_{2}+1}^{N_{1}+N_{2}}J_{k-p}H_{p}$  car $g\leq h$.\\ D'où $ J_{i}\subset H_{i}\subset H_{i}H_{p}\subset H_{i+p}$. \\
+	Posons $l=p+i,$ ainsi $0\leq l\leq N_{1}+N_{2}$ car $0\leq p\leq N_{2}$ et $ 0\leq i\leq N_{1}$. \\
+	D'où $H_{k}\subset \displaystyle  \sum_{l=0}^{N_{1}+N_{2}}I_{k-l}H_{l}+\displaystyle  \sum_{p=N_{2}+1}^{N_{1}+N_{2}}J_{k-p}H_{p}$. \\
+	Posons $K=\displaystyle  \sum_{p=N_{2}+1}^{N_{1}+N_{2}}J_{k-p}H_{p}$. \\
+	Comme $p\geq N_{2}$ alors $H_{p}=\displaystyle  \sum_{p=0}^{N_{2}}J_{p-i}H_{i}$. \\
+	D'où $K=\displaystyle  \sum_{p=N_{2}+1}^{N_{1}+N_{2}}J_{k-p}(\displaystyle  \sum_{p=0}^{N_{2}}J_{p-i}H_{i})=\displaystyle  \sum_{p=N_{2}+1}^{N_{1}+N_{2}}\displaystyle  \sum_{p=0}^{N_{2}}J_{k-p}J_{p-i}H_{i}$. \\
+	Donc $K\subset\displaystyle  \sum_{p=N_{2}+1}^{N_{1}+N_{2}}\displaystyle  \sum_{p=0}^{N_{2}}J_{k-i}H_{i}=\displaystyle  \sum_{p=0}^{N_{2}}J_{k-i}H_{i}$
+	$K\subset \displaystyle  \sum_{p=0}^{N_{2}}J_{k-i}H_{i}$
+	or $0\leq i\leq N_{2}$ et $N_{1}+N_{2}\leq k$. \\
+	D'où $k-i\geq N_{1}$. \\
+	Ainsi $J_{k-i}=\displaystyle  \sum_{l=0}^{N_{1}}I_{k-i-l}J_{l}$. \\
+	D'où $K\subset\displaystyle  \sum_{p=0}^{N_{2}}(\displaystyle  \sum_{l=0}^{N_{1}}I_{k-i-l}J_{l})H_{i}\subset\displaystyle  \sum_{p=0}^{N_{2}}\displaystyle  \sum_{l=0}^{N_{1}}I_{k-i-l}J_{l}H_{i}$.\\
+	Posons $p=i+l$. \\
+	D'où $K\subset \displaystyle \sum_{p=0}^{N_{1}+N_{2}}I_{k-p}H_{p}$.\\
+	Or $H_{k}\subset\displaystyle \sum_{l=0}^{N_{1}+N_{2}}I_{k-l}H_{l}+\displaystyle  \sum_{p=N_{2}+1}^{N_{1}+N_{2}}J_{k-p}H_{p}=\displaystyle  \sum_{l=0}^{N_{1}+N_{2}}I_{k-l}H_{l}+K\subset \displaystyle  \displaystyle  \sum_{l=0}^{N_{1}+N_{2}}I_{k-l}H_{l}$.\\ Car $K\subset \displaystyle  \displaystyle  \sum_{l=0}^{N_{1}+N_{2}}I_{k-l}H_{l}$.\\
+	Donc $H_{k}\subset H_{k-p}H_{p}\subset H_{k}$.\\
+	Finalement $H_{k}=\displaystyle  \displaystyle  \sum_{l=0}^{N_{1}+N_{2}}I_{k-l}H_{l}$
+	Par suite $f \Re h$.\\
+	
+	(iii) \textbf{Anti-symétrie}. \\
+	Soient $f=(I_{n})_{n\in \mathbb{N}}$ $,g=(J_{n})_{n\in \mathbb{N} }$\ des filtrations de $A$ telles que: \\
+	$f \Re g$ alors $f\leq g$ et $g \Re f$ alors $g\leq f.$ \\
+	D'où $f=g$. \\
+	On en déduit que $\Re$ est une relation d'ordre. 
+\end{proof}
+\begin{maproposition}
+	Soient $f=(I_n)_{n \in \mathbb{N}}$ et $g=(J_n)_{n \in \mathbb{N}}$ deux filtrations de $A$. $f\leqslant g$ et chaque $J_n$ est de type fini, alors $f$ est une $\alpha$-réduction de $g$ si et seulement si $R(A,g)$ est un $R(A,f)$-module de type fini.
+\end{maproposition}
+\begin{proof}
+	Supposons que $f$ est une $\alpha$-réduction de $g$.\\
+	Alors $f \leq g$ et $\text{ il existe } \, N \geq 1$ tel que $\text{ pour tout } n \geq N ; J_n = \displaystyle \sum_{p=0}^{N}{I_{n-p} J_p}$.\\
+	Prouvons que $R(A,g) = R(A,f)(J_0, J_1X_1, \cdots , J_NX_N) = M$.\\
+	$J_nX_n \subset R(A,g), \text{ pour tout } n \in \mathbb{N} \text{ alors } R(A,f) \subset R(A,g)$ car $f \leq g$,
+	Donc $M \subset R(A,g)$.\\
+	Montrons par récurrence que $\text{ pour tout } n \in \mathbb{N}, J_nX^n \subset M$
+	Si $n \leq N, J_nX^n \subset M$, par construction.\\
+	Soit $n \geq N$, supposons la propriété vraie et montrons que $J_{n+1}X^{n+1} \subset M$.\\
+	$J_{n+1} = \displaystyle \sum_{p=0}^{N}{I_{n+1-p} J_p} \text{ alors } J_{n+1}X^{n+1} = \displaystyle \sum_{p=0}^{N}{I_{n+1-p} J_pX^{n+1}}$, \\
+	D’où $ J_{n+1}X^{n+1} = \displaystyle \sum_{p=0}^{N}{I_{n+1-p}X^{n+1-p} J_pX^{p}} \subset M$.\\
+	Ainsi $R(A,g)$ est un $R(A,f)$-module de type fini.\\
+	Supposons que $R(A,g)$ est un $R(A,f)$-module de type fini.\\
+	Montrons que $f$ est une $\alpha$-réduction de $g$.\\
+	Par hypothèse on a : $f \leq g$.\\
+	Trouvons $N \in \mathbb{N}$ tel que $\text{ pour tout } n \geq N ; J_n = \displaystyle \sum_{p=0}^{N}{I_{n-p} J_p}$.\\
+	$R(A,g)$ étant un $R(A,f)$-module de type fini alors \\
+	$R(A,g) = R(A,f)(1, Z_1, \cdots , Z_r), Z_i \in R(A,g)$ et les $Z_i$ sont homogènes de degré $i$.\\
+	Posons $N=r$.\\
+	Soit $z \in J_n$.\\
+	$z \in J_n \text{ alors } zX^n \in J_nX^n \subset R(A,g)$, d'où $zX^n = \displaystyle \sum_{p=0}^{r}{h_p Z_p}$ , $h_p \in R(A,f)$ et $Z_0 = 1$.\\
+	$h_p$ homogène de degré $n-p \text{ alors } h_p \in I_{n-p}X^{n-p}$ , on déduit de cela que:\\ $h_p = a_{n-p}X^{n-p} \in I_{n-p}X^{n-p}$.\\
+	Aussi $Z_p$ est homogène de degré $p \text{ alors } Z_p = b_{p}X^{p} \in J_pX^p$.\\
+	Ainsi $zX^n = \displaystyle \sum_{p=0}^{r}{a_{n-p}X^{n-p} b_{p}X^{p}} \text{ alors } zX^n = \displaystyle \sum_{p=0}^{r}{a_{n-p}X^{n} b_{p}}$, ce qui implique que \\ $z = \displaystyle \sum_{p=0}^{r}{a_{n-p} b_{p}} \in \displaystyle \sum_{p=0}^{r}{I_{n-p} J_{p}}$, par conséquent $J_n \subset \displaystyle \sum_{p=0}^{r}{I_{n-p} J_{p}} \subset J_n$.\\
+	En somme, $J_n = \displaystyle \sum_{p=0}^{r}{I_{n-p} J_{p}}$, donc $f$ est une $\alpha$-réduction de $g$.
+\end{proof}
+\subsection{Réduction au sens de Dichi-Sangaré}
+\begin{madefinition}
+	($\beta$-réduction ou réduction au sens de Dichi-Sangaré \cite{Di4})\\
+	Soient $f = (I_n)_{n \in \mathbb{N}}$, $g = (J_n)_{n \in \mathbb{N}}$ deux filtrations de $A$.\\
+	$f$ est une $\beta$-réduction de $g$ si :
+	\begin{enumerate}
+		\item[i)] $f \leq g$;
+		\item[ii)]  $\exists \, k \geq 1$ , $J_{n+k} = I_n J_k , \forall n \geq k$.
+	\end{enumerate}
+\end{madefinition}
+\begin{maremarque}
+	Si $f$ est une $\beta$-réduction de $g$ alors $f$ est une $\alpha$-réduction de $g$.	
+\end{maremarque}
+\begin{proof}
+	Supposons que $f$ est une $\beta$-réduction de $g$.\\
+	Alors $f \leq g$ et $\text{ il existe } \, k \geq 1$ tel que $I_{n+k} = I_n J_k , \text{ pour tout } n \geq k$.\\
+	Posons $N = 2k$.\\
+	Soit $n \geq N= 2k$.\\
+	$\displaystyle \sum_{p=0}^{2k}{I_{n-p} J_{p}} = \displaystyle \sum_{p=0}^{k-1}{I_{n-p} J_{p}} + I_{n-k} J_k + \displaystyle \sum_{p=0}^{k+1}{I_{n-p} J_{p}}$, or $n \geq  2k \text{ alors } n-k \geq k$ et comme $f$ est une $\beta$-réduction de $g$ alors, $I_{n-k} J_k = J_n$.\\
+	Donc $\displaystyle \sum_{p=0}^{2k}{I_{n-p} J_{p}} = \displaystyle \sum_{p=0}^{k-1}{I_{n-p} J_{p}} + J_k + \displaystyle \sum_{p=0}^{k+1}{I_{n-p} J_{p}} \text{ alors } J_n \subset \displaystyle \sum_{p=0}^{2k}{I_{n-p} J_{p}}$.\\
+	De plus on a : $\displaystyle \sum_{p=0}^{2k}{I_{n-p} J_{p}} \subset J_n$. 
+	Par conséquent $J_n = \displaystyle \sum_{p=0}^{2k}{I_{n-p} J_{p}}$.\\
+	On déduit donc de tout ce qui précède que $f$ est une $\alpha$-réduction de $g$.
+\end{proof}
+\begin{maproposition}
+	Soient $A$ un anneau et $I$ , $J$ deux idéaux de $A$.\\
+	Alors les assertions suivantes sont équivalentes.\\
+	$i)$ $I$ est une réduction de $J$.\\
+	$ii)$ $f_I$ est une $\alpha$-réduction de $f_J$.\\
+	$iii)$ $f_I$ est une $\beta$-réduction de $f_J$.
+\end{maproposition}
+\begin{proof}
+	$i) \implies ii)$.\\
+	Supposons que $I$ est une réduction de $J$.\\
+	Alors $\text{ il existe } N \in \mathbb{N^*}$ tel que $J^{N+1} = IJ^N$.\\ $I \subset J \text{ alors } I^n \subset J^n , \text{ pour tout } n \in \mathbb{N}$, d'où $f_I \leq f_J$.\\
+	Posons $N_0 = N+1$.\\
+	Soit $n \geq N_0$.\\
+	$\displaystyle \sum_{p=0}^{N+1}{I^{n-p} J^{p}} = \displaystyle \sum_{p=0}^{N}{I^{n-p} J^{p}} + I^{n-N-1} J^{N+1}$, comme $I$ est une réduction de $J$ alors\\ $I^{n-N-1} J^{N+1} = J^{n-N-1+N+1} = J^n$. Donc $\displaystyle \sum_{p=0}^{N+1}{I^{n-p} J^{p}} = \displaystyle \sum_{p=0}^{N}{I^{n-p} J^{p}} + J^{n}$.\\ Ainsi $J^n \subset \displaystyle \sum_{p=0}^{N+1}{I^{n-p} J^{p}} \subset J^n$.\\
+	$f_I$ est donc une $\alpha$-réduction de $f_J$.\\
+	$ii) \implies iii)$.\\
+	Supposons que $f_I$ est une $\alpha$-réduction de $f_J$.\\
+	Alors $f_I \leq f_J$ et $\text{ il existe } \, N_0 \in \mathbb{N^*} , \text{ pour tout } \, n \geq N_0, \, J^n = \displaystyle \sum_{p=0}^{N_0}{I^{n-p} J^{p}}$.\\
+	Posons $N = N_0$.\\
+	Soit $n \geq N$. \\
+	$I^n J^{N_0} = \displaystyle \sum_{p=0}^{N_0}{I^n I^{N_0-p} J^{p}} = \displaystyle \sum_{p=0}^{N_0}{I^{n+N_0-p} J^{p}} = J^{N_0+n} \text{ alors } I^n J^{N_0} = J^{N_0+n}$.\\D'où $f_I$ est une $\beta$-réduction de $f_J$.\\
+	$iii) \implies i)$
+	Supposons que $f_I$ est une $\beta$-réduction de $f_J$.\\
+	$f_I \leq f_J$ et $\text{ il existe } N_0 \in \mathbb{N^*}$ tel que $\text{ pour tout } n \geq N_0 , J^{n+N_0} = I^n J^{N_0}$.\\
+	$f_I \leq f_J \text{ alors } I \subset J$.\\
+	Posons $N = 2N_0$\\
+	$J^{N+1} = J^{2N_0+1} = J^{N_0+N_0+1} = I^{N_0+1} J^N_0 = I I^{N_0} J^{N_0} = IJ^{2N_0}$.\\ Donc $J^{N+1}= IJ^{N}$ ce qui fait que $I$ est une réduction de $J$.
+\end{proof}
+\begin{maproposition}
+	Soient $A$ un anneau commutatif unitaire, $I$ un idéal de $A$ et \\ $g = (J_n)_{n \in \mathbb{N}}$ une filtration de $A$. $f_I$ est une $\beta$-réduction de $g$ si et seulement si $g$ est $I$-bonne.
+\end{maproposition}
+\begin{proof}
+	Supposons que $f_I$ est une $\beta$-réduction de $g$.\\
+	Cela implique que $f_I \leq g$ et $\text{ il existe } \, N_0 \in \mathbb{N^*} , \text{ tel que pour tout } n \geq N_0 \\ J_{n+N_0} = I^n J_{N_0}$.\\
+	$f_I \leq g \text{ alors } \text{ pour tout } n \in \mathbb{N} , IJ_n \subset J_{n+1}$.\\
+	Posons $N = 2N_0$\\
+	Soit $n \geq N$. 
+	\begin{align*}
+		J_{n+1} &= J_{n-N_0-N_0+1}.\\
+		J_{n+1} &= J_{n-N_0+1N_0}.\\
+		J_{n+1} &= I^{n-N_0+1} J_{N_0}.\\
+		J_{n+1} &= II^{n-N_0} J_{N_0}.\\
+		J_{n+1} &= IJ_n.
+	\end{align*}
+	D'où $\text{ pour tout } n \geq 2N_0$, $IJ_n = J_{n+1}$, $g$ est donc $I$-bonne. 
+\end{proof}
+\begin{maremarque}
+	La $\beta$-réduction étant plus générale que la $\alpha$-réduction, nous parlerons de $\beta$-réduction lorsque nous emploierons le terme réduction.
+\end{maremarque}
+
+\begin{maproposition}
+	Soit $f,g \in \mathbb{F}(A),$ telles que $f \leqslant g$.
+	\begin{enumerate}
+		\label{maprop4}
+		\item[(i)] $f$ est un réduction de $g$ si et seulement s'il existe un entier naturel $k \geqslant 1$ tel que $J_{k+n}  = J_{k}I_n$ pour tout $n \geqslant k$.\\ Pour un tel entier $k$ et pour tout $m \geqslant 1$, $J_{mk}=J_{mk+pk-pk}=J_{pk+(m-p)k}=J_{pk}I_{(m-p)k}=J_{pk}J_{(m-p)k}=J_{k}^{p}J_{(m-p)k}=J_{k}^{p}I_{(m-p)k}=J_{k}^{p}J_{(m-p)k},$\\ pour tout $p=1,2,\cdots,m$;
+		\item[(ii)] Si $f$ est une réduction de $g$ et que $g$ est une réduction de $h \in \mathbb{F}(A)$, alors $f$ est une réduction de $h$;
+		\item[(iii)] Si $f$ est une réduction de $g$ et si $h$ est une filtration $A$ telle que $f \leqslant h \leqslant g$ alors $h$ est une réduction de $g$.
+	\end{enumerate}
+\end{maproposition}
+\begin{proof}
+	i) Supposons que $f$ soit une réduction de $g$. Alors:
+	\begin{enumerate}
+		\item[(a)] $f \leqslant g$;
+		\item[(b)] $\exists r \geqslant 1,n_o \geqslant 0 ,\quad \forall n \geqslant n_0,\quad J_{r+n}= J_r I_n $.
+	\end{enumerate}
+	Soit $m_{0}\in \mathbb{N},$ tel que $m_{0}r\geq n_{0}$.
+	
+	Posons $k=m_{0}r$.
+	
+	Alors $J_{k+n}=J_{m_{0}r+n}=J_{m_{0}r}I_{n}=J_{k}I_{n}$ car $k\geq n_{0}.$
+	
+	La réciproque est évidente.
+	
+	ii) Supposons que $f$ est une réduction de $g$ et $g$ une réduction
+	de $h.$
+	
+	* $f\leq g\leq h\text{ alors } f\leq h$.
+	
+	* Comme $\ g$ est une réduction de $h$ alors, il existe $k^{\prime }\geq
+	1,$ $H_{k^{\prime }+n}=H_{k^{\prime }}J_{n},$ pour tout $n\geq k^{\prime }.$
+	
+	Posons $k^{\prime \prime }=k^{\prime }(k^{\prime }+1)$ comme dans (i).
+	
+	Ainsi en utilisant (i) car $f$ est une réduction de $g$, il vient  $H_{k^{^{\prime \prime }}+n}=H_{k^{^{\prime \prime }}}I_{n},$ pour tout $n\geq k^{^{\prime \prime }}.$
+	
+	Par suite $f$ est une réduction de $h$. \\
+	
+	iii) Supposons que $f$ réduction de $g$ et que $f\leq h\leq g.$
+	
+	Soit $k$ comme dans (i).
+	
+	Comme $h\leq g$ alors pour tout $n\geq k,$ $J_{k}H_{n}\subset
+	J_{k}J_{n}=J_{k+n}\subset J_{k}H_{n}$ car $f\leq h.$
+	
+	Donc $J_{k+n}=J_{k}H_{n}$ $,$ pour tout $n\geq k.$
+	
+	Par suite $h$ est réduction de $g.$
+\end{proof}
+
+\begin{maremarque}
+	Cependant, le fait que $g$ soit fortement entière sur $f$ n'implique pas
+	nécessairement que $f$ soit une réduction de $g$, même si $f$ et 
+	$g$ sont noethériennes. On peut le voir sur l'exemple suivant :\\ 
+	Soit $A=k[X]$ l'anneau des polynômes à une indéterminée sur le
+	corps $k$. \\ Soit $I=XA$.\\
+	On considère les filtrations $f=(I_{n})_{_{n\in \mathbb{N}}}$ et $g=(J_{n})_{_{n\in \mathbb{N}}}$ définies par:\\
+	$I_{n}=\left\{ 
+	\begin{array}{c}
+		I^{\frac{3n}{2}}\text{ si }n\text{ pair} \\ 
+		I^{\frac{3n+3}{2}}\text{ si }n\text{ impair}
+	\end{array}
+	\right. $
+	
+	$J_{n}=\left\{ 
+	\begin{array}{c}
+		I^{\frac{3n}{2}}\text{ si }n\text{ pair} \\ 
+		I^{\frac{3n+1}{2}}\text{ si }n\text{ impair}
+	\end{array}
+	\right. $
+	
+	On vérifie que $g$ est noethérienne et que $f\leq g$. \\ De plus, la filtration $g$ est entière sur $f$.\\ En effet pour tout élément $b\in J_{n}$, $b^{2}\in J_{2n}$ et on a $(bY^{n})^{2}=b^{2}Y^{2n}\in R(A,f)$. 
+	
+	L'anneau $R(A,g)$ est donc entier sur $R(A,f)$. De plus, comme $g$ est noethérienne, il résulte que $g$ est fortement entière sur $f$ et que $f$ est noethérienne.\\
+	Néanmoins, $f$ n'est pas une réduction de $g$ puisqu'on n'a pas $J_{2p+1}^{2}=I_{2p+1}J_{2p+1}$, pour $p$ suffisamment grand, condition nécessaire pour qu'une filtration $f$ soit une réduction de $g$ quand
+	l'anneau A est noethérien. 
+\end{maremarque}
+%\begin{maremarque}
+%	Soit $f \in \mathbb{F}(A)$. On suppose que A est noethérien. Alors $f$ est une réduction de $f$ $\Longleftrightarrow$ f est noethérienne.
+%\end{maremarque}
+\section{Filtrations f-bonnes}
+\begin{madefinition}
+	\label{maprop11}
+	Soient $A$ un anneau et $M$ un $A-module$.\\
+	On suppose que $\varphi=(M_n)_{n \in \mathbb{N}}$ est $f-compatible$, avec $f $ appartenant à $ \mathbb{F}(A)$. Alors:
+	\begin{itemize}
+		\item[(a)] $\varphi$ est \text{faiblement $f-$ bonne} s'il existe un entier naturel N supérieur ou égal à 1 tel que:
+		\[\forall n > N, M_{n}=\sum_{p=0}^{N}I_{n-p}M_{p}; \]
+		\item[(b)] $\varphi$ est \text{$f-$ bonne} s'il existe un entier naturel N supérieur ou égal à 1 tel que:
+		\[\forall n > N, M_{n}=\sum_{p=1}^{N}I_{n-p}M_{p}; \]
+		\item[(c)] $\varphi$ est \text{$f-$ fine} s'il existe un entier naturel N supérieur ou égal à 1 tel que:
+		\[\forall n > N, M_{n}=\sum_{p=1}^{N}I_{p}M_{n-p}. \]
+	\end{itemize} 
+\end{madefinition}
+\begin{maremarque}
+	\label{maprop6}
+	\begin{enumerate}
+		\item[(1)] Toute filtration $f-$bonne est faiblement $f-$ bonne.
+		\item[(2)] Soit $f \in \mathbb{F}(A)$. Alors f est faiblement $f-$bonne.
+		\item[(3)] Soit $f \in \mathbb{F}(A)$. Alors f est $f-$bonne si et seulement si f est $E.P.$
+		\item[(4)] Soient $\varphi \in \mathbb{F}(M)$ et $I$ un idéal de $A$. Alors $\varphi$ est $I-bonne$ $\text{ si et seulement si }$ $\varphi$ est $f_{I}-bonne$, où $f_{I}$ est la filtration $I-adique$.
+		\item[(5)] Soit $g \in \mathbb{F}(A)$ telle que $f \leqslant g$. Alors si $g$ est fortement entière alors g est faiblement $f-bonne$.
+	\end{enumerate}
+\end{maremarque}
+\begin{proof}
+	(1) Soit $f=(I_n)$ une filtration $f-bonne$. Alors il existe $N \geqslant 1$ tel que :
+	\[ \forall n > N, I_n = \sum\limits_{p=1}^{N} I_{n-p}I_p. \]
+	Ainsi pour $n> N$, $\sum\limits_{p=0}^{N} I_{n-p}I_p =  I_n + \sum\limits_{p=1}^{N} I_{n-p}I_p = I_n + I_n = I_n$. \\
+	Donc $f$ est $faiblement$ $f-bonne$. \\
+	(2) Soit $f=(I_n) \in \mathbb{F}(A)$. Alors:\\
+	$I_n \subset \sum\limits_{p=0}^{N} I_{n-p}I_p$ et $ I_{n-p}I_p \subset I_n$
+	Donc $\sum\limits_{p=0}^{N}I_{n-p}I_p \subset I_n$. \\ Par suite, $I_n = \sum\limits_{p=0}^{N} I_{n-p}I_p.$ Et donc $f$ est $faiblement$ $f-bonne$.\\
+	(3) Par définition toute filtration $f-bonne$ est $E.P$.\\
+	(4) Supposons que $\varphi \in \mathbb{F}(M)$ est $I-bonne$. Alors: \\
+	Pour tout $n \in \mathbb{N}$, $IM_n \subset M_{n+1}$ et il existe $n_0 \in \mathbb{N}^{*}$ tel que pour tout $n \geqslant n_0$, $IM_n = M_{n+1}$.\\
+	On a: $IM_n=M{n+1}$ alors $I^{2}M_n=M_{n+2}$, d'où $I^{n-p}M_p=M_n$ pour tout $n \geqslant n_0$.\\ Par suite $\sum\limits_{p=0}^{n_0}I^{n-p}M_p=M_n$ et donc $\varphi$ est $f_{I}-bonne$.\\
+	Réciproquement supposons que $\varphi$ est $f_{I}-bonne$ alors il existe $N \geqslant 1$ tel que pour tout $n> N$, $M_{n+1} = \sum\limits_{p=0}^{N}I^{n+1-p}M_p =I(\sum\limits_{p=0}^{N}I^{n-p}M_p ) = IM_n$. Ainsi $\varphi$ est $I-bonne$.	
+	
+\end{proof}
+\begin{maproposition}
+	\label{maprop7}
+	Si $f=(I_n)$ est une réduction de $g=(J_n)$ alors:
+	\begin{enumerate}
+		\item[(i)] $f$ est $A.P.$ et $g$ est fortement $A.P$;
+		\item[(ii)] $g$ est $E.P$ et $f-bonne$;
+		\item[(iii)] En plus, si $A$ est noethérien alors $f$ et $g$ sont noethériennes et g est fortement entière sur $f$.
+	\end{enumerate}
+\end{maproposition}
+\begin{proof}
+	Supposons que $f=(I_{n})_{_{n\in \mathbb{N}}}$ est une réduction de $g=(J_{n})_{_{n\in \mathbb{N}}}.$
+	
+	Alors $f\leq g$ et il existe $k\geq 1,$ tel que pour tout $n\geq k,J_{n+k}=I_{n}J_{k}=J_{k}J_{n}$.\\
+	i) Nous avons $J_{nk}=J_{k}^{n}$ pour tout $n.$ Donc $g$ est $fortement$ $A.P.$\\
+	De plus la division euclidienne de $n$ par $k$ donne $n=kq_{n}+r_{n}$, avec $0\leq r_{n}<k.$\\
+	Posons $k_{n}=k(q_{n}+1).$\\
+	Alors $\underset{n\longrightarrow +\infty }{\lim }\frac{k_{n}}{n}=\underset{n\longrightarrow +\infty }{\lim }\frac{kq_{n}+r_{n}+k-r_{n}}{n}=\underset{n\longrightarrow +\infty }{\lim}1+\frac{k-r_{n}}{n}=1.$\\
+	Par ailleurs, $J_{k_{n}m}=J_{k_{n}}^{m}=J_{k(q_{n}+1)}^{m}\subset J_{n}^{m}.$\\
+	Posons $k_{n}^{\prime }=k_{2k+n}.$\\
+	Alors $I_{k_{n}^{\prime }m}\subset J_{k_{n}^{\prime }m}\subset J_{(k_{2k+n})m}=J_{k_{2k+n}}^{m}=J_{k}^{m}I_{k+n}^{m}\subset I_{n}^{m}.$\\
+	Par suite $\underset{n\longrightarrow +\infty }{\lim }\frac{k_{n}^{\prime }}{n}=1$\\
+	Donc $f$ est $A.P.$\\
+	ii) Posons $N=2k.$ Alors si $n\geq N,$ $n-k\geq k$ et $J_{n}=I_{n-k}J_{k}\subset \sum\limits_{p=1}^{2k}I_{n-p}J_{p}$\\
+	Donc $J_{n}=\sum\limits_{p=1}^{2k}I_{n-p}J_{p}$ et $g$ est $f-bonne$ et donc $g$ est $E.P.$\\
+	iii) Si $A$ est noethérien alors d'après ii) $g$ et $f$ sont noethérienne. Et donc $g$ est $fortement$ $entière$ sur $f.$
+\end{proof}
+\begin{maproposition}
+	\label{maprop3}
+	Toute filtration $\varphi$ de $M$ $f-fine$ est $f-bonne$.
+\end{maproposition}
+\begin{proof}
+	Supposons que $\varphi =(M_{n})$ est une filtration de $M$ qui est $f-fine$,
+	où $f=(I_{n})_{_{n\in \mathbb{N}}}$ une filtration de $A.$
+	
+	Alors il existe $N\geq 1$ tel que pour tout $n>N,M_{n}=$ $
+	\sum\limits_{p=1}^{N}I_{p}M_{n-p}.$
+	
+	Comme $n>N,$ posons $n=N+1$, ainsi\\
+	
+	$M_{N+1}=$ $\sum\limits_{p=1}^{N}I_{p}M_{N+1-p}=$ $\sum\limits_{q=1}^{N}I_{N+1-q}M_{q},$ avec $q=N+1-p.$
+	
+	Ainsi, il vient de proche en proche que $M_{N+j}=$  $\sum\limits_{p=1}^{N}I_{N+j-p}M_{p}\,\ ,$ pour tout $j$ avec $1\leq j\leq m.$
+	
+	Alors $M_{N+m}=$ $\sum\limits_{p=1}^{N}I_{p}M_{N+m-p}\,=\sum\limits_{q=m}^{N+m-1}I_{N+m-q}M_{q}\,=\sum\limits_{q=m}^{N}I_{N+m-q}M_{q}\,+\sum\limits_{q=N+1}^{N+m-1}I_{N+m-q}M_{q}=\sum\limits_{q=m}^{N}I_{N+m-q}M_{q}\,+\sum\limits_{q=N+1}^{N+m-1}I_{N+m-q}(\sum\limits_{p=1}^{N}I_{q-p}M_{p}).$
+	
+	Or $\sum\limits_{q=m}^{N}I_{N+m-q}M_{q}\,\subset
+	\sum\limits_{p=1}^{N}I_{N+m-p}M_{p}\,$\ et $\sum\limits_{q=N+1}^{N+m-1}I_{N+m-q}(\sum\limits_{p=1}^{N}I_{q-p}M_{p})=\sum\limits_{p=1}^{N}(\sum\limits_{q=N+1}^{N+m-1}I_{N+m-p})M_{p}=\sum\limits_{p=1}^{N}I_{N+m-p}M_{p}\subset M_{N+m}$
+	
+	Par suite $\varphi $ est $f-bonne,$ l'inclusion inverse étant évidente.
+\end{proof}
+\begin{moncorollaire}
+	\label{maprop8}
+	Soient $f,g \in \mathbb{F}(A)$ avec $f \leqslant g$. Si $A$ est noethérien alors:\\ 
+	$g$ faiblement $f-bonne$ $\text{ si et seulement si }$ $g$ est fortement entière sur $f$.
+\end{moncorollaire}
+\begin{maproposition}
+	Soient $f=(I_n)$ une filtration $E.P.$ de $A$ et $\varphi=(M_n) \in \mathbb{F}(M)$. Nous avons les assertions suivantes:
+	\[ \varphi \text{ est } f-fine \text{ si et seulement si } \varphi \text{ est } f-bonne \text{ si et seulement si } \varphi \text{ est faiblement } f-bonne. \]
+\end{maproposition}
+\begin{proof}
+	Il suffit de montrer que $\varphi$ est faiblement $f-bonne$ si $\varphi$ est $f-fine$.\\ Supposons que $\varphi$ est faiblement $f-bonne$.\\
+	Soient $N, N' \geqslant 1$ des entiers tels que pour tout $n \geqslant N,$
+	$M_{n}=$ $\sum\limits_{p=0}^{N}I_{n-p}M_{p}$ et pour tout $n\geq
+	1,I_{n}=\sum\limits_{p=1}^{N^{\prime }}I_{n-p}I_{p}.$ Alors pour $n>N^{\prime \prime }=N+N^{\prime},$
+	
+	$M_{n}=$ $\sum\limits_{p=0}^{N}I_{n-p}M_{p}=\sum\limits_{p=0}^{N}(
+	\sum\limits_{q=1}^{N^{\prime}}I_{n-p-q}I_{p})M_{p}=\sum\limits_{q=1}^{N^{\prime}}I_{q}(\sum\limits_{p=0}^{N}I_{n-p-q}M_{p})=\sum\limits_{q=1}^{N^{\prime}}I_{q}M_{n-q}\subset\sum\limits_{q=1}^{N^{^{\prime \prime }}}I_{q}M_{n-q}.$
+	
+	Donc $M_{n}=\sum\limits_{q=1}^{N^{^{\prime \prime }}}I_{q}M_{n-q}$ ,
+	l'inclusion inverse étant triviale. 
+\end{proof}
+\begin{moncorollaire}
+	\label{maprop9}
+	Soient $f,g \in \mathbb{F}(A)$. Si $A$ est noethérien, $f \leqslant g$ et $f$ noethérien. Alors nous avons les assertions suivantes:\\
+	g est $f-fine$ $\text{ si et seulement si }$  g est $f-bonne$ $\text{ si et seulement si }$  g est faiblement $f-bonne$ $\text{ si et seulement si }$  g est fortement entière sur f.
+\end{moncorollaire}
+\begin{maproposition}
+	Soient $f=(I_n), g=(J_n) \in \mathbb{F}(A)$, tel que $f \leqslant g$.\\ Si $g$ est $f-bonne$, $E.P.$ et $A$ est noethérien alors $f$ et $g$ sont noethériennes.
+\end{maproposition}
+\begin{proof}
+	Il existe un entier $N\geq 1$ tel que pour tout $n>N,J_{n}=\sum
+	\limits_{p=1}^{N}I_{n-p}J_{p}\subset
+	\sum\limits_{p=1}^{N}J_{n-p}J_{p}\subset J_{n}$
+	
+	Donc $J_{n}=\sum\limits_{p=1}^{N}J_{n-p}J_{p}$ pour tout $n>N.$
+	
+	Cette égalité est valable si $1\leq n\leq N.$
+	
+	Comme $g$ est $E.P$ et $A$ noethérien alors $g$ est fortement entière sur $f.$ 
+	
+	Par suite $g$ est noethérien et d'après \cite{Eak}, $f$ est noethérien. 
+\end{proof}
+\begin{maproposition}
+	Soient $f=(I_n), g=(J_n) \in \mathbb{F}(A)$, tel que $f \leqslant g$.\\Si $g$ est faiblement $f-bonne$ alors:\\ $f$ est $A.P$ $\text{ si et seulement si }$ $g$ est $A.P$.
+\end{maproposition}
+\begin{proof}
+	Soient $f=(I_{n})_{_{n\in \mathbb{N}}},g=(J_{n})_{_{n\in\mathbb{N}}}\in \mathbb{F}(A).$
+	
+	Alors il existe un entier $N\geq 1$ tel que $I_{n}\subset J_{n}\subset
+	I_{n-N}\subset J_{n-N}$ pour tout $n> N.$
+	
+	Si $f$ est $A.P.$ alors il existe une suite d'entiers $(k_{n})_{n\in \mathbb{N}}$ telle que $\underset{n\longrightarrow \infty }{\lim }\frac{k_{n}}{n}=1$ et $I_{k_{n}m}\subset I_{n}^{m}$,
+	pour tout $m,n\in \mathbb{N}.$
+	Par suite, $J_{(k_{n}+N)m}\subset J_{k_{n}m+Nm}\subset J_{k_{n}m+N}\subset I_{k_{n}m+N}\subset I_{k_{n}m}\subset I_{n}^{m}\subset J_{n}^{m}.$
+	
+	D'où $\underset{n\longrightarrow \infty }{\lim }\frac{k_{n}+N}{n}=1,$ $g$ est $A.P.$\\
+	Réciproquement si $g$ est $A.P.$ alors il existe une suite d'entiers $(k_{n}^{^{\prime }})_{n\in \mathbb{N}}$ associée à $g.$
+	
+	Alors $I_{k_{n}^{\prime }+N.m}\subset J_{k_{n}^{\prime }+N.m}\subset J_{n+N}^{m}\subset I_{n}^{m}$ pour tout $m,n\in \mathbb{N}.$
+	
+	Et $\underset{n\longrightarrow \infty }{\lim }\frac{k_{n}^{\prime }+N}{n}=1,f$ est $A.P.$
+\end{proof}
+\begin{maproposition}
+	\label{maprop10}
+	Soient $A$ un anneau noethérien, $f=(I_n) , g=(J_n)$ deux filtrations de $A$. Si $f$ est noethérienne alors les assertions suivantes sont équivalentes:
+	\begin{enumerate}
+		\item[(i)] $g$ est fortement entière sur $f$;
+		\item[(ii)] Il existe un entier $N \geqslant 1$, tel que $t_Ng \leqslant f \leqslant g$.
+	\end{enumerate}
+\end{maproposition}
+\begin{proof}
+	D'après \ref{maprop6} (3), il suffit de montrer que $(ii) \text{ alors } (i)$. Ce qui est une conséquence de \ref{maprop8} et de (\cite{Ok},2.9)
+\end{proof}
+%\begin{maremarque}
+%	\label{maprop12}
+%	Sous certaines conditions (voir \cite{Di1}, 3.1 (2), (b)) certaines propositions sur les filtrations entières sont équivalentes avec des filtrations fortement entières. 
+%\end{maremarque}
+%\begin{maproposition}
+%	Soit A un anneau noethérien et $g$ une filtration de $A$ fortement entière sur $f$ ou $g$ est fortement $A.P.$ de rang $r$, alors pour tout entier naturel $m \geqslant 1$, $g^{(rm)}$ est fortement entière sur $f^{(rm)}$.  
+%\end{maproposition}
+%\begin{proof}
+%	Si $g$ est fortement $A.P.$ alors $f$ est fortement $A.P.$
+%	Alors Supposons que seulement $f$ est fortement $A.P.$ de rang $r.$
+%	
+%	Il existe un entier $N\geq 0$ tel que $t_{N}g\leq f\leq g.$\\
+%	Posons $f=(I_{n})_{_{n\in \mathbb{N}}},g=(J_{n})_{_{n\in \mathbb{N}}},f_{1}=f^{(rm)},g_{1}=g^{(rm)}.$
+%	
+%	Nous avons $J_{N+n}\subset I_{n}$ pour tout $n\in \mathbb{N}.$
+%	
+%	De même $J_{rm(N+n)}\subset J_{N+rmn}$ $\subset I_{rmn}$  pour tout $n\in \mathbb{N}.$
+%	
+%	D'où $t_{N}g_{1}\leq f_{1}\leq g_{1}.$
+%	
+%	Or par hypothèse, $f^{(r)}=f_{I_{r}\text{ }}$alors $f^{(rm)}=f_{I_{rm}}$ qui est noethérienne.
+%	
+%	Donc $g_{1}$ est fortement entière sur $f_{1}.$
+%\end{proof}
+%
+Voyons à présent le théorème principal de ce mémoire.
+\begin{montheoreme}
+	Soient $f=(I_{n})_{_{n\in \mathbb{N}}}\leq $ $g=(J_{n})_{_{n\in \mathbb{N}}}$ des filtrations sur l'anneau $A.$ \\
+	Nous considérons les assertions suivantes:
+	
+	$i)$ $f$ est une réduction de $g.$
+	
+	$ii)$ $J_{n}^{2}=I_{n}J_{n}$ pour tout $n$ assez grand.
+	
+	$iii)$ $I_{n}$ est une réduction de $J_{n}$ pour tout $n$ assez grand.
+	
+	$iv)$ Il existe un entier $s$ supérieur ou égal à $ 1$ tel que pour tout $n$ supérieur ou égal à $ s,$ $J_{s+n}=J_{s}J_{n},$
+	
+	$I_{s+n}=I_{s}I_{n},$ $J_{s}^{2}=I_{s}J_{s},$ $J_{s+p}I_{s}=I_{s+p}J_{s}$ pour tout $p=1,2,...,s-1$
+	
+	$v)$ Il existe un entier $k$ supérieur ou égal à $ 1$ tel que $g^{(k)}$ est $I_{k}-bonne$
+	
+	$vi)$ Il existe un entier $r$ supérieur ou égal à $ 1$ tel que $f^{(r)}$ est une réduction de $g^{(r)}.$
+	
+	$vii)$ Pour tout entier $m$ supérieur ou égal à $ 1$ tel que $f^{(m)}$ est une réduction de $g^{(m)}.$
+	
+	$viii)$ $g$ est entière sur $f.$
+	
+	$ix)$ $g$ est fortement entière sur $f.$
+	
+	$x)$ $g$ est $f-fine.$
+	
+	$xi)$ $g$ est $f-bonne.$
+	
+	$xii)$ $g$ est $faiblement$ $f-bonne.$
+	
+	$xiii)$ Il existe un entier $N$ supérieur ou égal à $ 1$ tel que $t_{N}g\leq f\leq g$
+	
+	$xiv)$ Il existe un entier $N$ supérieur ou égal à $ 1$ tel que $t_{N}g^{\prime }\leq
+	t_{N}f^{\prime}$.
+	
+	$xv)$ $P(f)=P(g)$.
+	
+	1) On a:
+	
+	$(i)$ $\Longleftrightarrow (vii)$ ; $(v)$ $\Longleftrightarrow (vi)$ ; $(viii)$ $\Longleftrightarrow (xv)$ ; $(ii)$ $\Longrightarrow (iii)$ ; $(iv)$ 
+	$\Longrightarrow (i)\Longrightarrow (v)$ ; $(ix)\Longrightarrow (vii),(xii)$
+	et $(xiii)$ ;
+	
+	$(i)\Longrightarrow (x)\Longrightarrow (xi)\Longrightarrow
+	(xii)\Longrightarrow (xiii)$
+	
+	2) Si de plus on suppose $A$ noethérien, alors:
+	
+	$(i)\Longleftrightarrow (xiv)$ ; $(i)\Longrightarrow (ix)\Longleftrightarrow
+	(xii)$ ; $(i)\Longrightarrow (ii)$
+	
+	3) Par ailleurs, si $f$ est $noeth\acute{e}rienne,$ alors $A$ est noethérien et les assertions suivantes sont équivalentes:
+	
+	$(ix)\Longleftrightarrow (x)\Longleftrightarrow (xi)\Longleftrightarrow
+	(xii)\Longleftrightarrow (xiii)$
+	
+	4) Si $f$ et $g$ sont noethériennes alors nous avons:
+	
+	$(iii)\Longrightarrow (viii)\Longleftrightarrow (ix)$ ; $(vi)\Longrightarrow (ix)$
+	
+	5) Si $f$ est fortement noethérienne et $g$ est noethérienne alors les quinze (15) assertions sont équivalentes et dans ce cas $g$ est fortement noethérienne
+	
+	$(i)\Longleftrightarrow (ii)\Longleftrightarrow (iii)\Longleftrightarrow
+	(iv)\Longleftrightarrow (v)\Longleftrightarrow (vi)\Longleftrightarrow
+	(vii)\Longleftrightarrow (viii)\Longleftrightarrow (ix)\Longleftrightarrow
+	(x)\Longleftrightarrow (xi)\Longleftrightarrow (xii)\Longleftrightarrow
+	(xiii)\Longleftrightarrow (xiv)\Longleftrightarrow (xv).$
+\end{montheoreme}
+\begin{proof}
+	1)
+	
+	$(i)\Longleftrightarrow (vii).$
+	
+	Supposons $(i)$ et choisissons $k$ comme dans \ref{maprop4} (i) alors pour tout
+	entiers $m\geq 1$ et $n\geq k,$ $J_{m(k+n)}=J_{mk}I_{mn}$, ce qui entraîne $(vii).$
+	
+	La réciproque est évidente.
+	
+	$(v)\Longrightarrow (vi).$
+	
+	Posons $f^{(k)}=(H_{n});$ $g^{(k)}=(K_{n});$ $H_{n}=I_{nk};$ $K_{n}=J_{nk};$ 
+	$H_{1}=I_{k};$
+	
+	Par hypothèse, $H_{1}K_{n}\subset K_{n+1}$ pour tout entier $n$ et il
+	existe un entier $n_{0}\geq 1$ tel que $H_{1}K_{n}=K_{n+1}$ pour tout $n\geq
+	n_{0}.$
+	
+	Pour tout entier $m\geq 0,$ $K_{n_{0}+m}=H_{1}^{m}K_{n_{0}}\subset
+	H_{m}K_{n_{0}}\subset K_{n_{0}+m}.$
+	
+	Donc $K_{n_{0}+m}=K_{n_{0}}H_{m}$ pour tout entier $m.$ Et donc $f^{(k)}$
+	est une réduction de $g^{(k)}.$
+	
+	$(vi)\Longrightarrow (v).$
+	
+	Il suffit de montrer que si $f$ est une réduction de $g$ alors il existe 
+	$k\geq 1$ tel que $g^{(k)}$ est $I_{k}-bonne.$
+	
+	Posons $k$ comme dans \ref{maprop4} (i), alors pour tout entiers $m\geq 1$ et  $J_{k(m+1)}=J_{mk}I_{k}$, donc $g^{(k)}$ est $I_{k}-bonne.$
+	
+	Donc $(vi)\Longrightarrow (v).$
+	
+	$(viii)\Longleftrightarrow (xv).$
+	
+	Si $g$ est entière sur $f$ alors $f\leq g\leq P(f),$ ainsi $P(f)\leq
+	P(g)\leq P(P(f))=P(f),$ donc $P(g)=P(f).$
+	
+	Réciproquement si $P(f)=P(g)$ alors $g\leq P(g)=P(f)$ et donc $g$ est entière sur $f.$
+	
+	$(ii)\Longrightarrow (iii).$
+	
+	Évident.
+	
+	$(iv)\Longrightarrow (i).$
+	
+	Posons $n\geq 2s$ et $n=qs+p$ avec $0\leq p<s.$
+	
+	Alors $J_{s+n}=J_{(q-2)s+2s+(s+p)}=J_{s}^{q-2}J_{2s+(s+p)}=J_{s}^{q-2}J_{s}^{2}J_{s+p}=J_{s}^{q-1}I_{s}J_{s+p}=J_{s}^{q-1}J_{s}I_{s+p}=J_{s}^{q}I_{s+p}=J_{s}I_{s}^{q-1}I_{s+p}\subset J_{s}I_{n}\subset J_{s+n}.
+	$
+	
+	Par suite $J_{s+n}=J_{s}I_{n}$ pour tout $n\geq 2s.$ Donc $
+	J_{2s+n}=J_{2s}I_{n}$ pour tout $n\geq 2s.$ D'où $(i).$
+	
+	
+	$(i)\Longrightarrow (v)$
+	
+	Évident car $(vi)\Longrightarrow (v).$
+	
+	$(ix)\Longrightarrow (viii)$
+	
+	Évident
+	
+	$(ix)\Longrightarrow (xii)\Longrightarrow (xiii)$ en utilisant \ref{maprop6} (5)
+	
+	$(i)\Longrightarrow (x).$
+	
+	Pour tout entier $n\geq N=2k-1,$ posons $n=qk+r,$ avec $0\leq r<k$ où $k$
+	est comme dans $(4.3)$ $(i).$
+	
+	Alors $J_{n}=J_{k(q-1)}I_{k+r}.$
+	
+	Ainsi $1\leq k+r<2k-1,$ $J_{n}\subset
+	\sum\limits_{p=1}^{N}I_{p}J_{n-p}\subset J_{n}$, d'où $J_{n}=\sum\limits_{p=1}^{N}I_{p}J_{n-p}$ pour tout $n\geq N=2k-1$.
+	
+	Ce qui prouve que $g$ est $f-fine.$
+	
+	$(x)\Longrightarrow (xi)$ par \ref{maprop3}
+	
+	$(xi)\Longrightarrow (xii)$ par \ref{maprop6} (1).
+	
+	
+	2) 
+	
+	On suppose maintenant que $A$ est noethérien.
+	
+	Alors $(i)\Longrightarrow (ix)$ en utilisant \ref{maprop7}.
+	
+	$(i)\Longrightarrow (ii)$
+	
+	$f$ est noethérienne par $\ref{maprop7}$ donc il existe un entier $k^{\prime }$ tel que $I_{n+k^{\prime }}=I_{n}I_{k^{\prime }},$ pour tout $n\geq k^{\prime }$.
+	
+	Choisissons $k$ comme dans \ref{maprop4} (i) nous pouvons supposons que $k=k^{\prime }$ et même prendre $kk^{\prime }$ \`{a} la place de $k$ ou $k^{\prime }$ si nécessaire.
+	
+	Pour tout $n\geq 3k,$ posons $n=qk+r,$ avec $0\leq r<k.$ Alors $q=E(\frac{n}{k})\geq 3.$
+	
+	$J_{n}=J_{k}I_{(q-1)k+r}=J_{k}I_{k}^{q-2}I_{k+r}.$
+	
+	$J_{n}^{2}=J_{k}^{2}I_{k}^{q-3}(I_{k}^{q-1}I_{k+r})I_{k+r}\subset J_{2k}I_{(q-3)k}I_{n}I_{k+r}.$
+	
+	D'où $J_{n}^{2}\subset J_{n}I_{n}$
+	
+	Donc $J_{n}^{2}=J_{n}I_{n}$ pour tout $n\geq 3k.$
+	
+	$(i)\Longleftrightarrow (iv).$ 
+	
+	D'après 1) il suffit de montrer que $(i)\Longrightarrow (iv).$
+	
+	Nous avons vu que $(i)\Longrightarrow (ii).$ Alors il existe un entier $
+	k^{\prime }\geq 1$ tel que $J_{n}^{2}=I_{n}J_{n}$ pour tout $n\geq k^{\prime}.$
+	
+	Dans la preuve de la même implication, nous avons aussi montrer qu'il existe un entier $k\geq 1$ tel que $J_{k+n}=J_{k}I_{n}=J_{k}J_{n}$ et que $I_{k+n}=I_{k}I_{n}$ pour tout $n\geq k.$
+	
+	Posons $n\geq 2kk^{\prime }=s,$ $k"=kk^{\prime }$ et $n=qk"+r$ avec $0\leq r<k".$ Alors $q\geq 2$ et:
+	
+	$J_{s+n}=J_{(q+2)k"+r}=J_{k"}^{3}J_{(q-1)k"+r}=I_{k"}^{2}J_{k"}J_{(q-1)k"+r}=I_{s}J_{n}.$
+	
+	$J_{s+n}=J_{s}I_{n}=J_{s}J_{n}$
+	
+	$I_{s+n}=I_{s}I_{n}$
+	
+	$J_{s}^{2}=I_{s}J_{s}$
+	
+	D'où $(iv).$
+	
+	$(ix)\Longleftrightarrow (xii)$ d'après \ref{maprop8}
+	
+	$(iii)\Longleftrightarrow (xiv)$
+	
+	Nous savons que pour tout idéal $I\subset J$ d'un anneau noethérien, $I$ est une réduction de $J$ si et seulement si $I^{\prime }=J^{\prime },$ où $I^{\prime }$est la clôture intégrale de $I.$ D'où l'équivalence. 
+	
+	3) Supposons que $f$ est noethérienne.
+	
+	Alors d'après \ref{maprop10}, $(ix)\Longleftrightarrow (xiii)$ et d'après $\ref{maprop9},$ 
+	
+	$(ix)\Longleftrightarrow (x)\Longleftrightarrow (xi)\Longleftrightarrow (xii)\Longleftrightarrow (xiii)$
+	
+	4) Supposons que $f$ et $g$ sont noethériens. Alors $(viii)\Longleftrightarrow (ix)$ d'après (\cite{Di1}, \ref{maprop11},(b)).
+	
+	$(iii)\Longrightarrow (viii).$
+	
+	Supposons que $I_{n}$ est une réduction de $J_{n}$ pour tout $n\geq n_{0}.$
+	
+	$f$ et $g$ sont noethérien d'où fortement $A.P.$ \`{a} partir d'un rang
+	commun $k.$
+	
+	L'idéal $J_{n_{0}k}$ est entière sur l'idéal $I_{n_{0}k}.$ D'où $g$ est entière sur $f$ d'après (\cite{Di1}, 4.5).
+	
+	$(vi)\Longrightarrow (ix).$
+	
+	Si $f^{(r)}$ est une réduction de $g^{(r)}$ alors $g^{(r)}$ est fortement entière sur $f^{(r)}$ d'après \ref{maprop7} (iii) et $g$ est fortement entière sur $f$ d'après \ref{maprop12}
+	
+	5) Supposons que $f$ est fortement noethérienne. D'après
+	l'implication précédente il est facile de montrer que $(xii)\Longrightarrow (i).$
+	
+	Supposons que $(xii),$ alors il existe un entier $N\geq 1$ tel que pour tout $n>N,$ $J_{n}=\sum\limits_{p=0}^{N}I_{n-p}J_{p}.$
+	
+	$f$ étant fortement noethérienne, il existe un entier $N^{\prime}\geq 1$ tel que $I_{m}I_{n}=I_{m+n}$ pour tout $m,n\geq N^{\prime }.$
+	
+	Posons $n\geq k=N+N^{\prime }.$
+	
+	Si $0\leq p\leq N,$ alors $N^{\prime }=k-N\leq k-p\leq n-p,$ $J_{n+k}=\sum\limits_{p=0}^{N}I_{n+k-p}J_{p}=\sum\limits_{p=0}^{N}I_{n}I_{k-p}J_{p}=I_{n}J_{k}$ , et $f$ est une réduction de $g.$
+	
+	Pour compléter la preuve, nous avons montrer par exemple que si $f$ est une réduction de $g$ et si $f$ est fortement noethérienne alors $g$ est fortement noethérien.
+	
+	Soient $k,$ $k^{\prime }$ des entiers $\geq 1$ tel que $J_{k+n}=J_{k}I_{n}$
+	pour tout $n\geq k$ et $I_{m+n}=I_{m}I_{n}$ pour tout $m,n\geq k^{\prime }.$
+	
+	Posons $m,n\geq k^{\prime }.$ Alors $J_{m}J_{n}\subset
+	J_{m+n}=J_{k}I_{m+(n-k)}=J_{k}I_{m}I_{n-k}\subset J_{m}J_{n},$ d'où $J_{m+n}=J_{m}J_{n}$ pour tout $m,n\geq k+k^{\prime }$ et $g$ est fortement noethérienne.
+\end{proof}

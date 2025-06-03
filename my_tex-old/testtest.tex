@@ -1,0 +1,48 @@
+%Redéfinir le format du numéro de chapitre 
+% Ajuster l’espace entre le numéro et le titre 
+%\input{tcilatex}
+%\input{tcilatex}
+%\input{tcilatex}
+%\input{tcilatex}
+%\input{tcilatex}
+%\input{tcilatex}
+%\input{tcilatex}
+
+
+\documentclass{book}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tocloft}
+\usepackage{stmaryrd}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amssymb}
+
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=Latex.dll}
+%TCIDATA{Version=5.50.0.2890}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Thursday, April 25, 2024 19:08:25}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+
+\renewcommand{\cftchappresnum}{Chapitre } \renewcommand{\cftchapaftersnum}{:}
+\newlength{\mylen} \settowidth{\mylen}{\cftchappresnum\cftchapaftersnum} \addtolength{\cftchapnumwidth}{\mylen}
+
+%\input{tcilatex}
+
+\begin{document}
+Pour afficher le symbole de gradient en minuscule en LaTeX, vous pouvez utiliser la commande suivante en mode mathématique :
+$\partial$
+
+\[
+\triangledown f
+\]
+
+Ici, \( \triangledown \) représente le symbole de gradient en minuscule et \( f \) est la fonction par rapport à laquelle vous prenez le gradient. Vous pouvez utiliser cette commande dans votre document LaTeX pour afficher le gradient en minuscule d'une fonction.
+
+
+
+\end{document}

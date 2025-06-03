@@ -1,0 +1,65 @@
+\documentclass[12pt, a4paper, oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{arial}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage[left=2.8cm,right=2.8cm,top=3.5cm,bottom=3.5cm]{geometry}
+\usepackage{tocloft}
+\usepackage{stmaryrd}
+\hypersetup{colorlinks=true, urlcolor=black,linkcolor=black, breaklinks=true}
+\usepackage{tikz}
+\usepackage[none]{hyphenat} % Désactive la césure des mots
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyfoot[C]{\thepage} % Place page number in the center of the footer
+\renewcommand{\headrulewidth}{0pt} % Remove the header line
+%\newtheoremstyle pour définir un nouveau style d'environnement appelé break. Ce style inclut \newline avant chaque nouvelle définition. 
+%\newtheoremstyle{break}
+%{\topsep}{\topsep}%
+%{\itshape}{}%
+%{\bfseries}{}%
+%{\newline}{}%
+%\theoremstyle{break}
+%Redéfinir le format du numéro de chapitre 
+\renewcommand{\cftchappresnum}{Chapitre } \renewcommand{\cftchapaftersnum}{:}
+% Ajuster l’espace entre le numéro et le titre 
+\newlength{\mylen} \settowidth{\mylen}{\cftchappresnum\cftchapaftersnum} \addtolength{\cftchapnumwidth}{\mylen}
+
+\newtheorem{maremarque}{Remarque}[chapter]
+\newtheorem{montheoreme}{Théorème}[chapter]
+\newtheorem{madefinition}{Définition}[chapter]
+\newtheorem{madefinition_proposition}{Définition-Proposition}[chapter]
+\newtheorem{maproposition}{Proposition}[chapter]
+\newtheorem{moncorollaire}{Corollaire}[chapter]
+\newtheorem{monlemme}{Lemme}[chapter]
+\newtheorem{monexemple}{Exemple}[chapter]
+\newtheorem{monexemples}{Exemples}[chapter]
+\newtheorem{maconsequence}{Conséquence}[chapter]
+\newtheorem{moncontreexemple}{Contre exemple}[chapter]
+
+
+\begin{document}
+	\setcounter{tocdepth}{2}
+	\renewcommand\thepage{\roman{page}}
+	\input{Dedicace_Remerciement}
+	\input{Resume_Abstract}
+	\input{Notations}
+	\input{Introduction}
+	\input{Chapitre1}
+	\input{Chapitre2}
+	\input{Chapitre3}
+	\input{Conclusion}
+	\input{Bibliographie}
+\end{document}

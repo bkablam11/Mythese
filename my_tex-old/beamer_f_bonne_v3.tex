@@ -1,0 +1,423 @@
+\documentclass[11pt,a4paper]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{stmaryrd}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+%\usetheme{Boadilla}
+\usetheme{Madrid}
+
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{mwe}
+\logo{\includegraphics[width=0.7cm]{./img/UNA.png}}
+\date{}
+
+%\author[KABLAM]{\textit{\textbf{Présenté par M. KABLAM Edjabrou Ulrich Blanchard}}}
+%\title[MÉMOIRE MASTER]{\textbf{SOUTENANCE DE MÉMOIRE DE MASTER \\ OPTION: ALGÈBRE COMMUTATIVE ET CRYPTOGRAPHIE\\ SPÉCIALITÉ: THÉORIE DES FILTRATIONS}}
+%\institute[\textcolor{red}{U.N.A.}]{\textcolor{red}{\textbf{Université NANGUI ABROGOUA \\ Unité de Formation et de Recherche des Sciences Fondamentales et Appliquées}}}
+
+\author[KABLAM]{\textbf{Présenté par} \textcolor{blue}{ M. KABLAM Edjabrou Ulrich Blanchard} \\  
+\textbf{Directeur de Mémoire: }\textcolor{blue}{ M. ASSANE Abdoulaye, Maître de Conférences} \\
+	\textbf{Encadrant Scientifique: }\textcolor{blue}{M. BROU Kouadjo Pierre, Maître-Assistant}}
+
+\title[MÉMOIRE DE MASTER]{\textbf{DÉPENDANCE INTÉGRALE, RÉDUCTION ET FILTRATIONS BONNES}}
+\setbeamercovered{transparent} 
+\setbeamertemplate{navigation symbols}{} 
+\institute[]{
+	\transdissolve[duration=3]
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\includegraphics[scale=0.300]{UNA}
+		\DeclareGraphicsExtensions{.png,.jpg}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			LMI \\ Laboratoire \\ de \\ Mathématiques \\ et \\ Informatique  
+		\end{center}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\includegraphics[scale=0.400]{SFA}
+		\DeclareGraphicsExtensions{.png,.jpg} 
+	\end{minipage}
+} 
+
+
+\begin{document}
+		\begin{frame}
+		\titlepage
+	\end{frame}
+%	\begin{frame}
+%		\maketitle
+%		\begin{block}{\begin{center}
+%					\underline{\emph{THÈME:}} \textbf{DÉPENDANCE INTÉGRALE, RÉDUCTION ET FILTRATIONS BONNES}
+%			\end{center}}
+%			\begin{center}
+%				Directeur de Mémoire: M. ASSANE Abdoulaye, Maître de Conférences\\
+%				Encadrant scientifique: M. BROU Kouadjo Pierre, Maître-Assistant
+%			\end{center}
+%		\end{block}
+%	\end{frame}
+	
+	\begin{frame}{
+			PLAN DE PRÉSENTATION}
+		\begin{enumerate}
+			\item \textcolor{blue}{INTRODUCTION}\\
+			\item \textcolor{blue}{PRÉLIMINAIRES}\\
+			\item \textcolor{blue}{DÉPENDANCE INTÉGRALE, RÉDUCTION ET FILTRATIONS BONNES }\\
+			\item \textcolor{blue}{CONCLUSION}\\
+		\end{enumerate}
+	\end{frame}
+	\setbeamercovered{transparent}
+	
+		\begin{frame}{INTRODUCTION}
+		\begin{block}{}
+			\begin{enumerate}
+				\item Historique de la notion de dépendance intégrale.
+				\item Historique de la notion de réduction.
+				\item Utilité des filtrations.
+				\item Problématique et plan de travail.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+		\begin{frame}
+		\begin{enumerate}
+			\item<0> \textcolor{blue}{INTRODUCTION}\\
+			\item<1> \textcolor{blue}{PRÉLIMINAIRES}\\
+			\item<0> \textcolor{blue}{DÉPENDANCE INTÉGRALE, RÉDUCTION ET FILTRATIONS BONNES }\\
+			\item<0> \textcolor{blue}{CONCLUSION}\\
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{PRÉLIMINAIRES}
+		\framesubtitle{FILTRATIONS}
+		\begin{block}{Définition 1}
+				$f=(I_n)_{n \in \mathbb{Z}}$ est une filtration de $A$ si: 
+				\begin{enumerate}[(i)]
+					\item $I_0 = A$;
+					\item $I_{n+1} \subset I_n, \forall n \in \mathbb{Z}$;
+					\item $I_{p}I_{q} \subset I_{p+q}, \forall p,q \in \mathbb{Z}$.
+				\end{enumerate}
+		\end{block}
+	\end{frame}
+		\begin{frame}{PRÉLIMINAIRES}
+		\framesubtitle{EXEMPLE DE FILTRATIONS}
+		\begin{alertblock}{Exemple}
+			\begin{enumerate}[(1)]
+				\item On pose \\ $A= \dfrac{\mathbb{Z}}{4\mathbb{Z}}, I_0 = A, I_1=I_2 = (\bar{2}), I_n = (\bar{0})$ ,$\forall$ $n \geqslant 3.$ \\ Ainsi $f=(I_n)_{n \in \mathbb{N}}$ est une filtration.
+				\item On pose \\ $A= \mathbb{Z}[X], I_0 = A, I_{2n}=I_{2n-1} = I^n=(X)^n $, $\forall$ $n \geqslant 1.$ \\ Ainsi $f=(I_n)_{n \in \mathbb{N}}$ est une filtration.
+			\end{enumerate}
+		\end{alertblock}
+	\end{frame}
+	
+		\begin{frame}{PRÉLIMINAIRES}
+		\framesubtitle{FILTRATIONS}
+		\begin{alertblock}{Remarque}
+		On peut remarquer que pour tout entier n négatif, $ I_n$ est égal à  $A$.\\ En effet, en utilisant la décroissance des idéaux (ii) et que $I_0$ est égal à $A$ (i), il vient $I_n$ est égal $A$, pour tout entier n négatif car pour tout entier relatif n, les $I_n$ sont des idéaux de $A$.\\
+		Ainsi au lieu d'étudier la famille $f = (I_n)_{n \in \mathbb{Z}}$ nous pouvons nous ramener à étudier la famille $f = (I_n)_{n \in \mathbb{N}}$.
+		\end{alertblock}
+	\end{frame}
+		\begin{frame}{PRÉLIMINAIRES}
+		\framesubtitle{CLASSES DES FILTRATIONS}
+		\begin{block}{}
+			\begin{table}
+				\begin{center}
+					\begin{tabular}{|l|c|}
+						\hline
+						f $I-adique$ & $I_n=I^n,\forall n \in \mathbb{N}^*$. (1)\\
+						\hline
+						f $I-bonne$ & $\forall n \in \mathbb{Z}, II_n \subseteq I_{n+1} $ , $\exists \, n_0 \in \mathbb{N}$, $II_n = I_{n+1}, \forall n \geqslant n_0.$ (2)\\
+						\hline
+						f $A.P.$ &$\exists \, (k_n)_{n\in \mathbb{N}} $, $\forall$ n,m $\in \mathbb{N}$, $I_{mk_n} \subset I_n^{m}$ , $\underset{n\longrightarrow +\infty }{\lim }\dfrac{k_{n}}{n}=1$. (3)\\
+						\hline
+						f f.$A.P.$ &$\exists k\geqslant 1, \forall \, n \in \mathbb{N}, \ I_{nk} = I_k^n$. (4)\\
+						\hline
+						f noeth. & son anneau de Rees ${R}(A,f) =\displaystyle \bigoplus_{n \in \mathbb{N}}{I_n X^n}$ est noethérien. (5)\\
+						\hline
+						f f. noeth. & $\exists k\geqslant 1, \forall \, m, n \in \mathbb{Z}, \ m, n \geqslant k, I_m I_n = I_{m+n}$. (6)\\
+						\hline
+						f E.P. & $\exists N\geqslant 1, \forall \, n \geqslant N, \ I_n =\sum\limits_{p=1}^{N} I_{n-p}I_p.$ (7)\\
+						\hline
+					\end{tabular}
+					
+				\end{center}
+				\caption{\underline{\textbf{Classification des Filtrations}}}
+			\end{table}
+		
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{PRÉLIMINAIRES}
+		\framesubtitle{}
+		\begin{block}{}
+			\begin{figure}
+				\begin{center}
+					\begin{tikzpicture}
+						% Création des nœuds
+						\node (A) at (-1,0) {f I-adique};
+						\node (B) at (2,0) {f I-bonne};
+						\node (C) at (2,-2) {f fortement noethérienne};
+						\node (D) at (6,-2) {f noethérienne};
+						\node (E) at (9,0) {f A.P};
+						\node (F) at (6,0) {f fortement A.P};
+						\node (G) at (2,2) {f E.P};
+						
+						% Dessin des flèches avec des modifications pour les rendre plus visibles
+						\draw[->, ultra thick, >=stealth] (A) -- (B);
+						\draw[->, ultra thick, >=stealth] (B) -- (C);
+						\draw[->, ultra thick, >=stealth] (B) -- (F);
+						\draw[->, ultra thick, >=stealth] (C) -- (D);
+						\draw[->, ultra thick, >=stealth] (F) -- (E);
+						\draw[->, ultra thick, >=stealth] (F) -- (D);
+						\draw[->, ultra thick, >=stealth] (B) -- (G);
+					\end{tikzpicture}
+				\end{center}
+				\caption{\underline{\textbf{Liens entre les différentes classes des filtrations}}}
+			\end{figure}
+			
+		\end{block}
+	\end{frame}
+	
+%		\begin{frame}{PRÉLIMINAIRES}
+%		\framesubtitle{DÉMONSTRATION}
+%		\begin{block}{}
+%			\begin{enumerate}[(i)]
+%				\item Supposons que $f$ est $I-adique$ alors peu importe $n_0 \in \mathbb{N}$ choisi, $ II^n=I^{n+1},$ pour tout $ n \in \mathbb{N}.$ Donc $f$ est $I-bonne$.
+%				\item De proche en proche, on a $I^{n}I_{n_0} = I_{n_{0}+n},$ pour tout $n \geqslant 1$.\\
+%				En effet, $II_{n_0} = I_{n_{0}+1}$, en multipliant par $I$.\\ On a: $I^{2}I_{n_0} = II_{n_{0}+1}$ et $I^1I_{n_0+1} = I_{n_{0}+2}$. \\
+%				
+%			\end{enumerate}
+%		\end{block}
+%	\end{frame}
+%	
+%		\begin{frame}{PRÉLIMINAIRES}
+%		\framesubtitle{DÉMONSTRATION}
+%		\begin{block}{}
+%			\begin{enumerate}[(iii)]
+%				\item Supposons que $f$ est $I-bonne$ alors il existe $n_0 \in \mathbb{N}$ tel que pour tout $m\geqslant 1 $, $I^mI_n = I_{n+m}, \forall n \geqslant n_0.$\\
+%				Posons $k=n_0+1,$ soient $m,n \in \mathbb{N}$ alors:\\
+%				\begin{center}
+%					$I_{m+n}=I^mI_n \subset I_1^mI_n \subset I_mI_n \subset I_{m+n}$
+%				\end{center}
+%				Donc $ \forall \, m, n \in \mathbb{Z}, \ m, n \geqslant k, I_m I_n = I_{m+n}$.\\
+%				Par suite f est fortement noethérienne.
+%			\end{enumerate}
+%		\end{block}
+%	\end{frame}
+%			\begin{frame}{PRÉLIMINAIRES}
+%		\framesubtitle{DÉMONSTRATION}
+%		\begin{block}{}
+%			\begin{enumerate}[(iv)]
+%				\item Supposons que $f$ est $I-bonne$ alors il existe $n_0 \in \mathbb{N}$ tel que pour tout $m\geqslant 1 $, $I^mI_n = I_{n+m}, \forall n \geqslant n_0.$\\
+%				Posons $k=N=n_0+1$.
+%				\begin{center}
+%					$\sum\limits_{p=1}^{N} I_{n-p}I_p= I_{n-1}I_1 + \sum\limits_{p=2}^{N} I_{n-p}I_p$
+%				\end{center}
+%				Prenons $n \geqslant N=n_0+1$ alors $n-1 \geqslant n_0$.\\
+%				Alors $I_{n-1}I_1=I_n$.\\
+%				D'où $I_n \subset \sum\limits_{p=1}^{N} I_{n-p}I_p \subset I_n$.\\
+%				Par suite f est $E.P$
+%			\end{enumerate}
+%		\end{block}
+%	\end{frame}
+%	
+%	\begin{frame}{PRÉLIMINAIRES}
+%		\framesubtitle{DÉMONSTRATION}
+%		\begin{block}{}
+%			\begin{enumerate}[(v)]
+%				\item Supposons que $f$ est $I-bonne$ alors il existe $n_0 \in \mathbb{N}$ tel que pour tout $m\geqslant 1 $, $I^mI_n = I_{n+m}, \forall n \geqslant n_0.$\\
+%				Par récurrence sur $n \in \mathbb{N}$, montrons que $I_{nk} = I_k^n$.\\
+%				Posons $k= n_0+1 \geqslant 1$\\
+%				Initialisation: n=0, n=1, évident.\\
+%				Prenons n= 2, $I_{2k} \subset I_kI_k=I_k^2 \subset I_{2k}$, donc $I_{2k} = I_k^2$.\\
+%				Hérédité: Soit $n \geqslant 2$. Supposons que $I_{nk} = I_k^n$.\\
+%				On a: $I_{(n+1)k}= I^kI_k^n\subset I_kI_k^n \subset I_k^{n+1}$, donc $I_{(n+1)k} = I_k^{n+1}$.\\
+%				Par suite f fortement $A.P.$
+%			\end{enumerate}
+%		\end{block}
+%	\end{frame}
+	\begin{frame}{PRÉLIMINAIRES}
+		\framesubtitle{ÉLÉMENT ENTIER SUR UNE FILTRATION}
+		\begin{block}{Définition 2}
+			\begin{enumerate}
+				\item[(i)] Un élément $x$ de $A$ est dit entier sur $f$ s'il existe un entier $m $ appartenant à $ \mathbb{N}$ tel que
+				\[ x^m + a_1 x^{m-1} + \cdots + a_m = x^m + \sum_{i=1}^{m} a_i x^{m-i} = 0, \quad (8) \]
+				 $m \in \mathbb{N^*} \ , \ a_i \in I_i,\,\forall i=1, \cdots ,m.$
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+		\begin{frame}{PRÉLIMINAIRES}
+		\framesubtitle{RÉDUCTION DES FILTRATIONS}
+		\begin{block}{Définition 3}
+			\begin{enumerate}
+				\item[(ii)] $f$ est une $\beta$-réduction de $g$ si : \\
+				\begin{enumerate}
+					\item[a)] $f \leq g$; (9)
+					\item[b)]  $\exists \, k \geq 1$ , $J_{n+k} = I_n J_k , \forall n \geq k$. (10)
+				\end{enumerate}
+				\item[(iii)] I est une réduction de J si : \\
+				\begin{enumerate}
+					\item[a)] $I \subseteq J$; (11)
+					\item[b)]  $\exists \, k \geq 1$ , $J^{k+1} = I J^k.$ (12)
+				\end{enumerate}
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+		\begin{frame}{PRÉLIMINAIRES}
+		\framesubtitle{FILTRATIONS SUR UN MODULE}
+		\begin{block}{Définition 4}
+		Soit $M$ un $A$-module. On appelle filtration de $M$ toute famille $\varphi = (M_n)_{n \in \mathbb{Z}}$ de sous-modules de $M$ telle que:
+			\begin{enumerate}[(a)]
+				\item $M_0 = M$;
+				\item Pour tout $n \in \mathbb{Z}, M_{n+1} \subset M_n$. (13)
+			\end{enumerate}
+			La filtration $f = (I_n)_{n \in \mathbb{Z}}$ de $A$ et la filtration $\varphi = (M_n)_{n \in \mathbb{Z}}$ du $A$-module $M$ sont dites compatibles si:
+			\[ I_p M_q \subset M_{p+q} ,\, \forall \, p, q \in \mathbb{Z}. \quad (14)\]
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{PRÉLIMINAIRES}
+		\framesubtitle{FILTRATIONS f-BONNES}
+		\begin{block}{Définition 5}
+			Soit $\varphi=(M_n)_{n \in \mathbb{Z}}$ une filtration de module $M$, $f-compatible$, avec $f$, une filtration d'anneau $A$.
+			\begin{enumerate}[(a)]
+				\item $\varphi$ est \text{$f-$ bonne} s'il existe un entier naturel N supérieur ou égal à 1 tel que
+				\[\forall n > N, M_{n}=\sum_{p=1}^{N}I_{n-p}M_{p}. \quad (15)\]
+%				\item Une filtration $f=(I_n)_{n \in \mathbb{Z}}$ est dite $I-bonne$ si: 
+%				\begin{enumerate}[(i)]
+%					\item $\forall n \in \mathbb{N}, \quad II_n \subseteq I_{n+1}$;
+%					\item $\exists k \in \mathbb{N}$, $II_n = I_{n+1}, n\geqslant k$.
+%				\end{enumerate}
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+		\begin{frame}{PRÉLIMINAIRES}
+		\framesubtitle{FILTRATIONS f- ENTIÈRES}
+		\begin{block}{Définition 6}
+			Soit $f=(I_n)_{n \in \mathbb{N}} , g = (J_n)_{n \in \mathbb{N}}$ deux filtrations de $A$.  Alors:\\
+			\begin{enumerate}[(b)]
+					\item $g$ est \text{entière sur} $f$ si $g \leqslant P(f)$. Autrement dit,
+				\[\forall n \geqslant 1, J_n \subset P_{n}(f). \quad (16) \]
+			\end{enumerate}
+			$\forall k \in \mathbb{N}, P(f)=(P_k(f))_{k \in \mathbb{N}} =\left\{x \in A, x \text{ entier sur } f^{(n)} = (I_{nk})_{n \in \mathbb{N}}\right\}.$
+		\end{block}
+	\end{frame}
+	
+			\begin{frame}
+		\begin{enumerate}
+			\item<0> \textcolor{blue}{INTRODUCTION}\\
+			\item<0> \textcolor{blue}{PRÉLIMINAIRES}\\
+			\item<1> \textcolor{blue}{DÉPENDANCE INTÉGRALE, RÉDUCTION ET FILTRATIONS BONNES }\\
+			\item<0> \textcolor{blue}{CONCLUSION}\\
+		\end{enumerate}
+	\end{frame}
+	
+		\begin{frame}{DÉPENDANCE INTÉGRALE, RÉDUCTION ET FILTRATIONS BONNES}
+		\framesubtitle{CAS PARTICULIER DES FILTRATIONS I-ADIQUES}
+		\begin{block}{Proposition 1}
+				Soient $A$ un anneau, $I$ un idéal de $A$ et $x \in A$.
+				\begin{center}
+					$x$ est entier sur $I$ si et seulement si $I$ est une réduction de $I + (x) = I +xA $.
+				\end{center}
+		\end{block}
+	\end{frame}
+			\begin{frame}{Démonstration}
+		\begin{block}{}
+	$(i)$ Supposons que $x$ est entier sur $I$. Alors il existe $n $ appartenant à $ \mathbb{N^*}$ tel que \\ $x^n = \displaystyle \sum_{i=1}^{n}{(-a_i) x^{n-i}}$,  $a_i \in I^i, i=1, \cdots ,n$.\\ Ainsi \\ $x^n = \displaystyle \sum_{i=1}^{n}{(-a_i) x^{n-i}} \in \displaystyle \sum_{i=1}^{n}{I^i x^{n-i}} = I \displaystyle \sum_{i=0}^{n-1}{I^i x^{n-1-i}} $. (17)\\ Alors \\ $ x^n \in I(I+(x))^{n-1}.$ (18)\\
+	%Ainsi : $(I+(x))^n = (I+(x))(I+(x))^{n-1}= I(I+(x))^{n-1} + (x)(I+(x))^{n-1}.$
+	Ainsi  $(I+(x))^n = I(I+(x))^{n-1} + (x)(I+(x))^{n-1}. \quad (19)$
+		\end{block}
+	\end{frame}
+
+	
+			\begin{frame}{Démonstration}
+		\begin{block}{}
+			Montrons que $I$ est une réduction de $I + (x)$. (20)\\ On rappelle que pour tout $n $ appartenant à $ \mathbb{N}^*, nI = I.$ (21)\\
+			En prouvant que $(x)(I+(x))^{n-1} $ est contenu dans $ I(I+(x))^{n-1}$ (22) on aura
+			\begin{center}
+				$(I+(x))^n = I(I+(x))^{n-1}$. (23)
+			\end{center}
+		\end{block}
+	\end{frame}
+	\begin{frame}{Démonstration}
+		\begin{block}{}
+			$(x)(I+(x))^{n-1} = \displaystyle \sum_{i=0}^{n-1}{I^i (x)^{n-i}}$ \\
+			$(x)(I+(x))^{n-1} = (x)^n + I\displaystyle \sum_{i=0}^{n-2}{I^i (x)^{n-1-i}} \subset (x)^n + \displaystyle I\sum_{i=0}^{n-1}{I^i (x)^{n-1-i}}$. (24)\\
+			D'où \\$(x)(I+(x))^{n-1} \subset (x)^n + I(I+(x))^{n-1}.$ (25)\\
+			En utilisant (18), il vient
+			\\$(x)(I+(x))^{n-1} \subset I(I+(x))^{n-1}.$ (26) \\ D'où \\$ (I+(x))^{n} = I(I+(x))^{n-1}$. (27)\\
+			Par conséquent $I$ est une réduction de $I + (x)$.
+		\end{block}
+	\end{frame}
+	
+	
+					\begin{frame}{Démonstration}
+		\begin{block}{}
+				$(ii)$ Supposons que $I$ est une réduction de $I + (x)$.\\
+			Alors il existe $ n $ appartenant à $ \mathbb{N^*}$ tel que \\ $(I + (x))^{n+1} = I(I + (x))^{n}$. (28)\\
+			On a \\ $x^{n+1} \in (I + (x))^{n+1} = I(I + (x))^{n}$. \\Alors \\ $x^{n+1} \in I\displaystyle \sum_{i=0}^{n}{I^i (x)^{n-i}} = \displaystyle \sum_{i=0}^{n}{I^{i+1} (x)^{n-i}}$. (29)\\
+			D'où \\$x^{n+1} \in \displaystyle \sum_{i=1}^{n+1}{I^i (x)^{n+1-i}}$. (30)\\ Alors \\$ x^{n+1} =  \displaystyle \sum_{i=1}^{n+1}{a_i x^{n+1-i}}$,  $a_i \in I^i$. (31)\\ Ainsi $x$ est donc entier sur $I$.
+		\end{block}
+	\end{frame}
+	
+	
+	
+%	\begin{frame}{PRÉLIMINAIRES}
+%		\framesubtitle{PROBLÉMATIQUE ET ANNONCE DU PLAN}
+%		\begin{block}{}
+%			\begin{enumerate}
+%				\item[(i)] Comment étendre les résultats des filtrations I-adiques aux filtrations bonnes?
+%				\item[(ii)] Comment la dépendance intégrale et la réduction interagissent-elles avec les filtrations bonnes ?
+%			\end{enumerate}
+%		\end{block}
+%	\end{frame}
+	
+	\begin{frame}{DÉPENDANCE INTÉGRALE, RÉDUCTION ET FILTRATIONS BONNES}
+		\begin{block}{Proposition 2}
+			Soient $A$ noethérien, $f=(I_{n})_{_{n\in \mathbb{N}}}\leq $ $g=(J_{n})_{_{n\in \mathbb{N}}}$ deux filtrations de $A.$ \\ Si $f$ est fortement noethérienne et $g$ est noethérienne alors les assertions sont équivalentes et dans ce cas $g$ est fortement noethérienne:
+			\begin{enumerate}[(i)]
+				\item $f$ est une réduction de $g.$
+				%\item Il existe un entier $k\geq 1$ tel que $g^{(k)}$ est $I_{k}-bonne$
+				\item $g$ est $enti\grave{e}re$ sur $f.$
+				\item $g$ est $f-bonne.$
+				%\item $P(f)=P(g)$
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{enumerate}
+			\item<0> \textcolor{blue}{INTRODUCTION}
+			\item<0> \textcolor{blue}{PRÉLIMINAIRES}
+			\item<0> \textcolor{blue}{DÉPENDANCE INTÉGRALE, RÉDUCTION ET FILTRATIONS BONNES }
+			\item<1> \textcolor{blue}{CONCLUSION}
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{CONCLUSION}
+		\framesubtitle{BILAN ET PERSPECTIVES}
+		\begin{block}{}	
+			\begin{enumerate}
+				\item Propriétés des filtrations $I-bonnes$.
+				\item Réduction minimale des filtrations bonnes. 
+				\item Étendre ces résultats aux autres classes de filtrations (noethériennes,...).
+				\item Étendre ces résultats à des objets algébriques qui ne respectent pas forcement la décroissance.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\bigskip
+		{\textcolor{blue}{\Large \textit{\textbf{\begin{center}
+							MERCI POUR VOTRE AIMABLE ATTENTION
+		\end{center}}}}}
+	\end{frame}
+\end{document}

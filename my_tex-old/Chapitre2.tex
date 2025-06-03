@@ -1,0 +1,787 @@
+\chapter{DÉPENDANCE INTÉGRALE, RÉDUCTION ET FILTRATION I-ADIQUE}
+\chaptermark{DÉPENDANCE, RÉDUCTION ET FILTRATION I-ADIQUE}
+
+Dans ce second chapitre, notre étude se concentrera sur les filtrations I-adiques, lesquelles représentent un cas spécifique de filtrations bonnes.
+
+\section{Dépendance intégrale}
+\subsection{Dépendance intégrale sur les anneaux}
+\begin{madefinition}\textbf{(Élément Entier)} \\
+	Soient $B$ un anneau et $A$ un sous-anneau de $B$ ($A $ est contenu dans $ B$).\\
+	Un élément $x$ de $B$ est dit \textbf{entier} sur $A$ s'il est \textbf{racine d'un polynôme unitaire à coefficient dans} $A$.\\
+	En d'autres termes, s'ils existent $a_1, a_2, \cdots , a_n$ éléments de $A$ tels que :\\
+	\begin{equation}
+		\label{eq1}
+		x^n + a_1 x^{n-1} +\cdots+a_i x^{n-i} +\cdots + a_n = x^n + \sum_{i=1}^{n} a_i x^{n-i} = 0, \; n \in \mathbb{N^*}.
+	\end{equation}
+	
+	Cette relation (\ref{eq1}) est appelée \textbf{équation de dépendance intégrale} de $x$ sur $A$.\\
+	On dit que $B$ est entier sur $A$ lorsque tous les éléments de $B$ sont entiers sur $A$.
+\end{madefinition}
+
+\begin{monexemple}
+	Posons $B = \mathbb{R}$ et $A = \mathbb{Z}$. $A$ est un sous-anneau de $B$.\\
+	$\bullet$ $x = \sqrt{5}$ est solution de l'équation $x^2 - 5=0$. Donc $\sqrt{5}$ est entier sur $\mathbb{Z}$.\\
+	$\bullet$ $x = \sqrt{2}+1$ est solution de l'équation $x^2 - 2x -1=0$.\\Donc $x = \sqrt{2}+1$ est entier sur $\mathbb{Z}$.\\
+\end{monexemple}
+\begin{moncontreexemple}
+	Cependant, $\dfrac{1}{2}$ n'est pas entier sur $\mathbb{Z}$.\\
+	En effet, si $\dfrac{1}{2}$ est entier sur $\mathbb{Z}$, alors $\dfrac{1}{2}$ est solution d'une équation de dépendance intégrale. Alors: \\
+	$\exists$ n $\geq 1 , \left(\dfrac{1}{2} \right)^n + \sum\limits_{i=1}^{n} a_i \left(\dfrac{1}{2} \right)^{n-i} = 0$ , $a_i \in\mathbb{Z}$.\\
+	D'où $\left(\dfrac{1}{2} \right)^n \left[1+\sum\limits_{i=1}^{n} a_i \left(\dfrac{1}{2} \right)^{-i}\right] = 0$.\\
+	Comme $\left(\dfrac{1}{2} \right)^n \neq 0$ alors $1+\sum\limits_{i=1}^{n} a_i2^{i} = 0.$\\D'où $1+\sum\limits_{i=1}^{n} a_i2^{i} = 0.$\\ Donc $1 = 2\left(\sum\limits_{i=1}^{n} -a_i 2^{i-1}\right).$\\Par suite, $ 1$ appartient à $ 2\mathbb{Z}.$ Ce qui est \textbf{Absurde}.
+\end{moncontreexemple}
+\begin{maproposition}
+	\label{maprop12}
+	Soient $B$ un anneau et $A$ un sous-anneau de $B$ ($A $ est contenu dans $ B$).\\
+	Soit $x $ appartenant à $ B$. \\
+	Les assertions suivantes sont équivalentes:
+	\begin{enumerate}
+		\item[i)]$x$ est entier sur $A$;
+		\item[ii)]$A\left[ x\right]$ est un $A$-module de type fini;
+		\item[iii)]Il existe $C$ un sous-anneau de $B$ contenant $A\left[ x\right]$ tel que $C$ soit un $A$-module de type fini.
+	\end{enumerate}
+\end{maproposition}
+\begin{proof}
+	$i \implies ii)$
+	
+	Supposons que $x$ est entier sur $A.$
+	
+	Alors il existe $n$ $\in \mathbb{N}^{\ast },$ tel que $x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0,$ $\text{ pour tout } i\in \llbracket 1; n \rrbracket ,a_{i}\in A.$
+	
+	D'où il existe $n$ $\in \mathbb{N}^{\ast },$ tel que $x^{n}=\sum\limits_{i=1}^{n}(-a_{i})x^{n-i},$ $\text{ pour tout } i\in \llbracket 1; n \rrbracket ,a_{i}\in A.$
+	
+	Donc il existe $n$ $\in \mathbb{N}^{\ast },$ tel que $x^{n}\in A(1_A,x,x^{2},...,x^{n-1})=A[x].$\\
+	$\bullet$ Montrons que $A(1_A,x,x^{2},...,x^{n-1})=A[x].$\\
+	a) Par construction, $A(1_A,x,x^{2},...,x^{n-1})$ est contenu dans $ A[x].$\\
+	b) Réciproquement, montrons par récurrence sur $m$ que pour tout \\ $m	\in \mathbb{N},x^{m}\in A(1_A,x,x^{2},...,x^{n-1}).$
+	
+	* Si $m\in \llbracket 0; n-1 \rrbracket ,$ alors $x^{m}\in A(1_A,x,x^{2},...,x^{n-1}).$
+	
+	* Si $m\geq n$, alors $m=n+p,$ $p\geq 0.$
+	
+	\underline{Initialisation}
+	
+	Si $p=0$ alors  $x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0\text{ alors }
+	x^{n}=\sum\limits_{i=1}^{n}(-a_{i})x^{n-i}.$
+	
+	Comme $1\leq i\leq n,$ alors $0\leq n-i\leq n-1$.
+	
+	D'où, $x^{n}=\sum\limits_{i=1}^{n}(-a_{i})x^{n-i}\in
+	A(1_A,x,x^{2},...,x^{n-1}).$
+	
+	Donc la propriété est vraie pour $p=0$.
+	
+	\underline{Hérédité}
+	
+	Soit $p\geq 0.$ Supposons que $\text{ pour tout } k\in \llbracket 0, p \rrbracket
+	,x^{n+k}\in A(1,x,x^{2},...,x^{n-1})$.\\ Montrons que $x^{n+p+1}\in
+	A(1_A,x,x^{2},...,x^{n-1}).$
+	
+	$x^{n+p+1}=x^{p+1}x^{n}=x^{p+1}\times
+	\sum\limits_{i=1}^{n}(-a_{i})x^{n-i}=\sum\limits_{i=1}^{n}(-a_{i})x^{n+p+1-i}$.
+	
+	Comme $1\leq i\leq n,$ alors $p+1\leq n+p+1-i\leq n+p$.
+	
+	Ainsi par hypothèse de récurrence, $x^{n+p+1-i}\in
+	A(1_A,x,x^{2},...,x^{n-1})$ et par stabilité, il vient $x^{n+p+1}\in
+	A(1_A,x,x^{2},...,x^{n-1}).$
+	
+	Par suite, pour tout $m$ $\in \mathbb{N},x^{m}\in A(1_A,x,x^{2},...,x^{n-1}).$
+	
+	Donc $A(1_A,x,x^{2},...,x^{n-1})=A[x]$.
+	
+	$A[x]$ est donc un $A-$module de type fini de générateur $
+	(1_A,x,x^{2},...,x^{n-1}).$
+	
+	$ii)\implies iii)$ Il suffit de poser $A[x]=C$.
+	
+	$iii)\implies i)$ Supposons qu'il existe $C$ un sous module de $B$ contenant $A[x]$ qui soit un $A-$module de type fini.
+	
+	Soit $x\in A.$
+	
+	$A[x]$ est contenu dans $ C=A(y_{1},y_{2},...,y_{r})$ de type fini.
+	
+	Ainsi, pour tout $i\in \llbracket 1; r \rrbracket ,$ $xy_{i}\in C.$ On
+	a:
+	
+	$xy_{i}=\sum\limits_{j=1}^{r}a_{ij}y_{j}\text{ alors }
+	\sum\limits_{j=1}^{r}a_{ij}y_{j}-xy_{i}=0\text{ alors }
+	\sum\limits_{j=1}^{r}(a_{ij}-\delta _{ij}x)y_{j}=0$. \\Où $\delta_{ij}=\left\{ 
+	\begin{array}{ccc}
+		1 & { si } & i=j; \\ 
+		0 & { sinon}.
+	\end{array}
+	\right. $
+	
+	D'où $\left( 
+	\begin{array}{cccc}
+		a_{11}-x & a_{12} & \cdots & a_{1r} \\ 
+		a_{22} & a_{11}-x & \cdots& \vdots\\ 
+		\vdots & \vdots& \ddots  & \vdots\\ 
+		a_{r1} & \cdots & \cdots & a_{rr}-x
+	\end{array}
+	\right) \left( 
+	\begin{array}{c}
+		y_{1} \\ 
+		y_{2} \\ 
+		\vdots \\ 
+		y_{r}
+	\end{array}
+	\right) =\left( 
+	\begin{array}{c}
+		0 \\ 
+		0 \\ 
+		\vdots\\ 
+		0
+	\end{array}
+	\right) $
+	
+	Posons $T=(a_{ij})_{1\leq i,j\leq r}$ $,$ $Y=(y_{j})_{1\leq j\leq r}$. 
+	
+	Ainsi $(T-xI_{r})\times Y=0_{r}.$
+	
+	$(T-xI_{r})\times Y=0 \text{ ainsi } {^{t}com}(T-xI_{r})\times Y[(T-xI_{r})\times Y]=0. \\ 
+	\text{ Alors } \det [(T-xI_{r})Y]=0. \\
+	\text{ D'où } \det(T-xI_{r})y_{i}=0,$ $\text{ pour tout } i\in \llbracket 1; r \rrbracket $. 
+	\\$P_{T}(x)y_{i}=0,$ $\text{ pour tout } i\in \llbracket 1; r \rrbracket.$
+	
+	De plus, $1_A\in C,$ on peut donc supposer qu' $\text{il existe } i\in \llbracket 1; r \rrbracket ,$ tel que $y_{i}=1_A.$\\
+	D'où $P_{T}(x)=0.$\\
+	Or $P_{T}$ est un polynôme unitaire qui s'écrit:\\ $P_{T}(x)=x^{n}-tr(T)x^{n-1}+...+(-1)^{n}\det
+	(T)=x^{n}+\sum\limits_{i=1}^{n}\alpha _{i}x^{n-i},\alpha _{i}\in A.$
+	
+	Donc $P_{T}(x)=0\text{ alors } x^{n}+\sum\limits_{i=1}^{n}\alpha
+	_{i}x^{n-i}=0,\alpha _{i}\in A\text{ alors } x$ est entier sur $A.$
+	
+\end{proof}
+\begin{moncorollaire}
+	Soient $A$ et $B$ deux anneaux tels que $A $ est contenu dans $  B$ et $x_1, x_2, \cdots, x_n $ appartenant à $ B$.\\
+	Alors les assertions suivantes sont équivalentes:
+	\begin{enumerate}
+		\item[i)]$\text{ pour tout } i $ appartenant à $ \llbracket 1; n \rrbracket, x_i$ est entier sur $A$;
+		\item[ii)]$A[x_1, x_2, \cdots, x_n]$ est un $A$-module de type fini;
+		\item[iii)]Il existe un $A-module$ de type fini $C,$ contenu dans $  B$ tel que $x_i C $ soit contenu dans $  C, \text{ pour tout } i $ appartenant à $ \llbracket 1; n \rrbracket$.
+	\end{enumerate}
+\end{moncorollaire}
+\begin{proof}
+	En faisant comme démonstration de la proposition (\ref{maprop12}) et en procédant de proche en proche. 
+\end{proof}
+
+\begin{madefinition}
+	Soit $A $ contenu dans $ B$ une inclusion d'anneaux.\\
+	On qualifie $B$ d'une \textbf{A-algèbre} lorsque $B$ peut être appréhendé simultanément en tant que module sur A et en tant qu'anneau.\\
+	De plus, B est dit \textbf{de type fini} si $B$ est un $A-module$ de type fini.
+\end{madefinition}
+
+%\begin{maproposition}
+%	Soit $A $ contenu dans $ B$ une inclusion d'anneaux.\\
+%	Si B est une \textbf{A-algèbre de type fini} alors:
+%	\[ B \simeq \dfrac{A[X_1, X_2, \cdots, X_r]}{J} \]
+%	Où $J$ est un idéal de $A[X_1, X_2, \cdots, X_r]$
+%\end{maproposition}
+\begin{moncorollaire}\textbf{(Clôture intégrale d'anneaux)}\cite{Di2}\\
+	Soit $A $ contenu dans $ B$ une inclusion d'anneaux.\\
+	L'ensemble des éléments de B entiers sur A est un sous-anneau de B contenant A appelé \textbf{clôture intégrale} de $B$ dans $A$ notée $A'$.
+\end{moncorollaire}
+\begin{proof}
+	Il s'agit de montrer que $A^{\prime }$ est un sous anneau de $B.$
+	
+	$i)$ $1_B $ appartient à $ A \text{ et } x-1_B $ est nul $ \text{ donc } 1_B$ appartient à $ A'.$ \\
+	$\text{ D'où } A\subset A^{\prime }\subset B.$
+	
+	$ii)$ Soient $x,y$ appartenant à $ A^{\prime }.$
+	
+	$x$ appartient à $ A^{\prime }$ alors $A[x]$ est un $A-$module de type fini.
+	
+	$y$ appartient à $ A^{\prime }$ alors $A[y]$ est un $A-$module de type fini.
+	
+	Posons $C=A[x,y]=A[x][y].$
+	
+	Ainsi pour tout $z\in C,z=\sum\limits_{i=1}^{r}\alpha _{i}y^{i},\alpha
+	_{i}\in A[x].$ Ainsi $\alpha _{i}=\sum\limits_{j=1}^{s}\alpha _{ij}x^{j}.$
+	
+	D'où $z=\sum\limits_{i=1}^{r}\sum\limits_{j=1}^{s}\alpha _{ij}x^{j}y^{i}.$
+	
+	Donc $C=A(x^{j}y^{i})_{1\leq i\leq r,1\leq j\leq s,}$ est un système de générateur fini de $C.$
+	
+	Par suite, $C$ est un $A-$module de type fini.\\
+	De plus $A[x+y] $ est contenu dans $ C$ ainsi $A[x+y]$ est de type fini et donc $x+y$ est entier sur $A$.\\ Par suite $x+y \in A'$. De même $A[xy]$ est de type fini et donc $xy$ est entier sur $A$.\\ Par suite $xy \in A'$. \\ On en déduit que $A'$ est un sous anneau de $B$.
+\end{proof}
+
+\begin{moncorollaire}
+	Soient $A $ contenu dans $ B$ et $B$ contenu dans $ C $ deux inclusions d'anneaux.\\
+	Si $C$ est entier sur $B$ et $B$ est entier sur $A$ alors $C$ est entier sur $A$.
+\end{moncorollaire}
+\begin{proof}
+	Soit $x\in C.$
+	
+	Comme $x$ est entier sur $B$ alors il existe $n\in \mathbb{N}^{\ast },x^{n}=\sum\limits_{i=1}^{n}(-b_{i})x^{n-i},$ pour tout $b_{i}\in
+	B,i\in \llbracket 1; n \rrbracket.$
+	
+	Soit $i\in \llbracket 1; n \rrbracket,$ $A[b_{i}]$ est un $A-$module de type fini
+	(car $B$ entier sur $A).$
+	
+	Donc $A[b_{1},b_{2},...,b_{n}]$ est un $A-$module de type fini.
+	
+	Ainsi $A[b_{1}x^{n-1},b_{2}x^{n-2},...,b_{n}]$ est un $A-$module de type
+	fini.
+	
+	Soit $p\geq 0.$ Montrons que $x^{n+p}\in
+	A[b_{1}x^{n-1},b_{2}x^{n-2},...,b_{n}].$
+	
+	$\underline{Initialisation}$ $(p=0).$
+	
+	$x^{n}=\sum\limits_{i=1}^{n}(-b_{i})x^{n-i}\in
+	A[b_{1}x^{n-1},b_{2}x^{n-2},...,b_{n}].$
+	
+	$\underline{Hérédité}$ $(p\geq 0)$.
+	
+	Supposons que pour tout $k\in \llbracket 0; p \rrbracket,x^{n+k}\in
+	A[b_{1}x^{n-1},b_{2}x^{n-2},...,b_{n}].$
+	
+	$x^{n+p+1}=x^{n}\times x^{p+1}=\sum\limits_{i=1}^{n}(-b_{i})x^{n+p+1-i}.$
+	
+	Comme $1\leq i\leq r$ alors $n+p+1-r\leq n+p+1-i\leq n+p.$
+	
+	Donc par hypothèse de récurrence, $x^{n+p+1-i}\in
+	A[b_{1}x^{n-1},b_{2}x^{n-2},...,b_{n}].$
+	
+	Par stabilité, il vient $x^{n+p+1}\in
+	A[b_{1}x^{n-1},b_{2}x^{n-2},...,b_{n}].$
+	
+	Donc $x^{n+p}\in A[b_{1}x^{n-1},b_{2}x^{n-2},...,b_{n}].$
+	
+	Par suite, $A[b_{1}x^{n-1},b_{2}x^{n-2},...,b_{n}]$ est un $A-$module de
+	type fini, c'est à dire 
+	
+	$A[b_{1}x^{n-1},b_{2}x^{n-2},...,b_{n}]=A(z_{1},z_{2},...,z_{s}).$
+	
+	Posons $H=A[b_{1}x^{n-1},b_{2}x^{n-2},...,b_{n}]$ et $H^{\prime
+	}=A(1,x,...,x^{n-1},z_{1},z_{2},...,z_{s})$.
+	
+	$H^{\prime }$ est un $A-$module de type fini tel que $A[x]$ est contenu dans $ H^{\prime
+	}$ et $H'$ est contenu dans $ C.$
+	
+	Donc $x$ est entier sur $A.$
+	
+	Par suite $C$ entier sur $A.$
+\end{proof}
+\begin{maproposition}
+	Soit $A $ contenu dans $ B$ une inclusion d'anneaux tel que $B$ entier sur $A$.\\
+		Si $J$ est un idéal de $B$ alors:
+		\[ \dfrac{B}{J} \text{  est entier sur } \dfrac{A}{J \cap A};\]
+%		\item[ii)] Pour toute partie multiplicative $S$ de $A$
+%		\[ S^{-1}B \text{ est entier sur } S^{-1}A.\]
+
+\end{maproposition}
+
+\begin{proof}
+	$i)$ $B$ entier sur $A.$ 
+	
+	Soit $x$ appartenant à $ B,$ alors il existe $n\in \mathbb{N}^{\ast },x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0,$ pour tout $a_{i}\in	A,i\in \llbracket 1; n \rrbracket.$
+	
+	Ainsi $(x+J)^{n}+\sum\limits_{i=1}^{n}(a_{i}+J\cap
+	A)(x+J)^{n-i}=x^{n}+J+\sum\limits_{i=1}^{n}a_{i}x^{n-i}+J=\\
+	(x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i})+J=0+J=0_{J\cap A}.$
+	
+	Donc $x+J$ est entier sur $\dfrac{A}{J\cap A}.$
+	
+	Ainsi $\dfrac{B}{J}$ est entier sur $\dfrac{A}{J\cap A}.$
+	
+	
+	
+%	$ii)$ Supposons $B$ entier sur $A$
+%	
+%	Soit $\frac{x}{s}\in S^{-1}B,$ $x\in B$ et $s\in S$
+%	
+%	Comme $x$ est entier sur $A$ alors il existe $n\in \mathbb{N}^{\ast },x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0,$ pour tout $a_{i}\in
+%	A,i\in \llbracket 1; n \rrbracket.$
+%	
+%	D'où, $(\frac{x}{s})^{n}+\sum\limits_{i=1}^{n}(\frac{a_{i}}{s_{i}})(\frac{x}{s})^{n-i}=\frac{0}{1}$
+%	
+%	Donc $\frac{x}{s}$ est entier sur $S^{-1}A.$
+%	
+%	Par suite $S^{-1}B$ est entier sur $S^{-1}A.$
+\end{proof}
+\begin{maproposition}
+	Soit $A $ contenu dans $ B$ une inclusion d'anneaux tel que $B$ soit entier sur $A$.
+	\[ B \text{ est un corps} \text{ si et seulement si }  A \text{ est un corps}.\]
+\end{maproposition}
+\begin{proof}
+	$i)\implies ii)$ Supposons $B$ corps.
+	
+	Soit $x$ appartenant à $ A\backslash \{0\}.$
+	
+	Comme $A$ est contenu dans $ B$ alors $x$ appartenant à $ B\backslash \{0\}$. Donc $x$ est inversible d'inverse $x^{-1}$ appartenant à $ B.$
+	
+	De plus $B$ entier sur $A,$ alors il existe $n$ appartenant à $ \mathbb{N}^{\ast }, \\ (x^{-1})^{n}+\sum\limits_{i=1}^{n}a_{i}(x^{-1})^{n-i}=0,$ pour tout 
+	$a_{i}$ appartenant à $ A,i$ appartenant à $ \llbracket 1; n \rrbracket.$
+	
+	Ainsi $(x^{-1})^{n}=\sum\limits_{i=1}^{n}(-a_{i})(x^{-1})^{n-i},$ pour tout $
+	a_{i}$ appartenant à $ A,i$ appartenant à $ \llbracket 1; n \rrbracket.$
+	
+	$(x^{-1})\times (x^{-1})^{n-1}=\sum\limits_{i=1}^{n}(-a_{i})(x^{-1})^{n-i},$
+	pour tout $a_{i}$ appartenant à $ A,i$ appartenant à $ \llbracket 1; n \rrbracket.$
+	
+	$(x^{-1})=\sum\limits_{i=1}^{n}(-a_{i})(x^{-1})^{n-i}(x^{-1})^{-n+1},$ pour
+	tout $a_{i}$ appartenant à $ A,i$ appartenant à $ \llbracket 1; n \rrbracket.$
+	
+	$x^{-1}=\sum\limits_{i=1}^{n}(-a_{i})x^{i-1},$ pour tout $a_{i}$ appartenant à $ A,i$ appartenant à $
+	\llbracket 1; n \rrbracket.$
+	
+	Comme $1\leq i\leq n$ alors $0\leq i-1\leq n-1$.
+	
+	Donc $x^{i-1}$ appartient à $ A$.
+	
+	Par stabilité $x^{-1}$ appartient à $ A$.
+	
+	Donc $A$ est un corps.
+	
+	$ii)\implies i)$ Supposons que $A$ soit un corps.
+	
+	Soit $x$ appartenant à $ B\backslash \{0\}.$
+	
+	Comme $B$ entier sur $A,$ alors il existe $n$ appartenant à $ \mathbb{N}^{\ast },x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0,$\\ pour tout $a_{i}$ appartenant à $
+	A,i$ appartenant à $ \llbracket 1; n \rrbracket.$
+
+	Par récurrence sur $n$, montrons que $x$ appartient à $ A.$
+	
+	\underline{Initialisation} $(n=1)$.
+	
+	L'équation de dépendance intégrale devient, $x+a_{1}=0
+	\text{ alors } x=-a_{1}$ appartenant à $ A\backslash \{0\}.$
+	
+	Donc $x$ est inversible dans $A$ contenu dans $ B.$ Donc $x$ est inversible dans $B.$
+	
+	\underline{Hérédité} $(n\geq 1)$.
+	
+	Supposons que la propriété est vraie jusqu'à l'ordre $n.$
+	
+	Alors $x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0\text{ alors } x$ appartient à $ A.$
+	
+	Ainsi $x^{n+1}+\sum\limits_{i=1}^{n+1}a_{i}x^{n+1-i}=0\text{ alors } 
+	x(x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i})+a_{n+1}=0\text{ alors } \\
+	x(x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i})=-a_{n+1}.$
+	
+	* Si $-a_{n+1}\neq 0$ alors $x$ est inversible dans $A$ contenu dans $ B.$ Donc $x$
+	est inversible dans $B.$
+	
+	* si $-a_{n+1}=0,$ alors $x(x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i})=0 \text{ alors } x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0$\\ (car $x\neq 0$ et $B$ intègre).
+	
+	Ainsi $x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0\text{ alors }
+	x(x^{n-1}+\sum\limits_{i=1}^{n-1}a_{i}x^{n-1-i})=-a_{n+2}.$
+	
+	* si $-a_{n+2}\neq 0$ alors $x$ est inversible dans $A$ contenu dans $ B.$ Donc $x$ est inversible dans $B.$
+	
+	* sinon de proche en proche, il vient que $x+a_{1}=0\text{ alors } x=-a_{1}$ appartient à $
+	A\backslash \{0\}$
+	
+	Donc $x$ est inversible dans $A$ contenu dans $ B.$ Donc $x$ est inversible dans $B$
+	
+	Dans tous les cas, il vient $B$ corps.
+\end{proof}
+\subsection{Dépendance intégrale sur un idéal}
+\begin{madefinition}
+	Soient $A$ un anneau commutatif unitaire et $I$ un idéal de $A$.\\ Un élément $x$ de $A$ est dit entier sur $I$ s'il existe un entier $m \in \mathbb{N}$ tel que  
+	\[ 	x^m + a_1 x^{m-1} + \cdots + a_m = 0\text{, } \ a_i \in I^i,\, \forall i=1, \cdots ,m. \]	
+\end{madefinition}
+\begin{maproposition}
+	Soient $A$ un anneau et $I$ un idéal de $A$.
+	\[ x \ entier \ sur \ I \text{ si et seulement si } le \ monôme \ xX  \ est \ entier \ sur \ R(A, I) \]
+\end{maproposition}
+\begin{proof}
+	$i) \implies ii)$
+	
+	Supposons $x$ entier sur $I.$ Alors il existe $n\in \mathbb{N}^{\ast },x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0,$ $a_{i}\in I^{i}.$
+	
+	Ainsi il existe $n\in \mathbb{N}^{\ast },(xX)^{n}+\sum\limits_{i=1}^{n}a_{i}X^{i}(xX)^{n-i}=0,$ $
+	a_{i}X^{i}\in I^{i}X^{i}\in R(A,I).$
+	
+	D’où $xX$ est entier sur $R(A,I).$
+	
+	$ii)\implies i)$
+	
+	Supposons que  $xX\in A[X]$ est entier sur $R(A,I).$
+	
+	Ainsi il existe $n\in \mathbb{N}^{\ast },(xX)^{n}+\sum\limits_{i=1}^{n}a_{i}(xX)^{n-i}=0,$ $a_{i}\in R(A,I).
+	$
+	
+	Alors il existe $n\in \mathbb{N}^{\ast },(xX)^{n}=\sum\limits_{i=1}^{n}(-a_{i})(xX)^{n-i},$ $a_{i}\in
+	R(A,I).$
+	
+	Comme $(xX)^{n}$ est homogène de degré $n,$ alors pour tout $i\in \llbracket 1; n \rrbracket,$
+	
+	$\deg [a_{i}(xX)^{n-i}]=n\text{ alors } \deg (a_{i})+n-i=n\text{ ainsi } \deg
+	(a_{i})=i.$
+	
+	Donc $a_{i}\in I^{i}X^{i}\text{ alors } a_{i}=\alpha _{i}X^{i}$, avec $\alpha
+	_{i}\in I^{i}.$
+	
+	D’où, il existe $n\in \mathbb{N}^{\ast },(xX)^{n}+\sum\limits_{i=1}^{n}\alpha _{i}X^{i}(xX)^{n-i}=0,$
+	
+	il existe $n\in \mathbb{N}^{\ast },X^{n}[x^{n}+\sum\limits_{i=1}^{n}\alpha _{i}x^{n-i}]=0$, avec $\alpha _{i}\in I^{i}.$
+	
+	Par identification des polynômes, il existe $n\in \mathbb{N}^{\ast },x^{n}+\sum\limits_{i=1}^{n}\alpha _{i}x^{n-i}=0,$ avec $\alpha_{i}\in I^{i}.$
+	
+	Donc $x$ est entier sur $I.$
+\end{proof}
+\begin{moncorollaire}\textbf{(Clôture intégrale d'idéaux)}\cite{Di2}\\
+	Soient $A$ un anneau et $I$ un idéal de $A$.
+	L'ensemble noté: 
+	\[ I'=\{x \in A, x \; entier \; sur \; I \} \]
+	est un idéal de $A$ appelé \textbf{clôture intégrale de I}.
+\end{moncorollaire}
+\begin{proof}
+	
+	$i)$ Par construction, $I^{\prime }$ est contenu dans $ A.$
+	
+	$ii)$ $0^{1}+0=0$, donc $0\in I^{\prime }.$
+	
+	$iii)$ Soient $b\in A,x\in I^{\prime }.$
+	
+	Alors il existe $n\in \mathbb{N}^{\ast },x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0,$avec $a_{i}\in I^{i}.$
+	
+	Ainsi, il existe $n\in \mathbb{N}^{\ast },(bx)^{n}+\sum\limits_{i=1}^{n}b^{i}a_{i}(bx)^{n-i}=0,$avec $
+	b^{i}a_{i}\in I^{i}.$
+	
+	Donc $bx$ est entier sur $I.$ D'où $bx\in I^{\prime }.$
+	
+	$iv)$ Soient $x,y\in I^{\prime }.$
+	
+	Ainsi $xX,yX$ sont entiers sur $R(A,I).$
+	
+	Alors $xX+yX=(x+y)X\in A[X]$ est aussi entier sur $R(A,I)$
+	
+	Donc $x+y\in I^{\prime }.$
+	
+	Par suite, $I^{\prime }$ est un idéal de $A.$
+\end{proof}
+\begin{maremarque}\textbf{(Clôture intégrale d'idéaux et radical)}\cite{Di2} \\
+	Soient $A$ un anneau et $I$ et $J$ des idéaux de $A$.
+	\begin{enumerate}
+		\item[(i)]$I \subset J \implies I' \subset J' $;
+		\item[(ii)]$I \subset I' \subset \sqrt[]{I} $;
+		\item[(iii)]$\sqrt[]{I} = \; \sqrt[]{I'} $.
+	\end{enumerate}
+\end{maremarque}
+\begin{proof}
+	$i)$ Soit $x \in I'$ alors $x$ est entier sur $I$ ainsi pour tout $n \in \mathbb{N}^*,\\ x^n + \sum\limits_{k=1}^{n} a_k x^{n-k}=0$, avec $a_k \in I^k$, pour tout $k \in \llbracket 1; n \rrbracket.$\\ 
+	Or $I $ est contenu dans $ J$ d'où $I^k $ est contenu dans $ J^k$, pour tout $k \in \llbracket 1; n \rrbracket$.\\
+	Par suite, pour tout $n \in \mathbb{N}^*,\\ x^n + \sum\limits_{k=1}^{n} a_k x^{n-k}=0$, avec $a_k \in J^k$.\\
+	Donc $x$ est entier sur $J$.\\ Par suite, $I' $ est contenu dans $ J'$.\\
+	$ii)$ Soit $x\in I.$
+	
+	Alors $x^{1}-x=0$ ,où $a_{1}=-x^{1}\in I^{1}.$
+	
+	D'où $x\in I^{\prime }.$ Donc $I$ est contenu dans $ I^{\prime }.$
+	
+	$iii)$ Soit $x\in I^{\prime }.$
+	
+	Alors il existe $n\in \mathbb{N}^{\ast },x^{n}+\sum\limits_{i=1}^{n}a_{i}x^{n-i}=0,$avec $a_{i}\in I^{i}.$
+	
+	Ainsi pour tout $i\in \llbracket 1; n \rrbracket,$ $a_{i}\in I^{i}\text{ alors }
+	a_{i}x^{n-i}\in I^{i}$ est contenu dans $ I.$
+	
+	Par stabilité, il vient, qu'il existe $n\in \mathbb{N}^{\ast },x^{n}=\sum\limits_{i=1}^{n}(-a_{i})x^{n-i}\in I.$
+	
+	Donc $x\in \sqrt{I}.$
+	
+	D'où, $I^{\prime }\subset \sqrt{I}.$
+	
+	Par suite, $I\subset I^{\prime }\subset \sqrt{I}.$
+	
+	$iii)$ D'après ce qui précède
+	
+	$I\subset I^{\prime }\subset \sqrt{I}\text{ alors } \sqrt{I}\subset \sqrt{I^{\prime }}\subset \sqrt{\sqrt{I}}\text{ ainsi } \sqrt{I}\subset \sqrt{I^{\prime }}\subset \sqrt{I}\text{ d'où } \sqrt{I}=\sqrt{I^{\prime }}.$
+\end{proof}
+\begin{maconsequence}
+	Soit $x \in A$.
+	Si $x \in I'$ alors il existe $m \in \mathbb{N^*}$ tel que $x^m \in I$.
+\end{maconsequence}
+\begin{madefinition}
+	Un idéal $I$ de $A$ est dit \textbf{intégralement fermé} si $I = I'$.
+\end{madefinition}
+
+\section{Réduction d'un idéal}
+\subsection{Définitions et propriétés}
+\begin{madefinition}
+	Soient $A$ un anneau commutatif unitaire, $I$ et $J$ deux id\'eaux de $A$.
+	On dit que $I$ est une réduction de $J$ si :
+	\begin{enumerate}
+		\item[i)] I $\subset$ J;
+		\item[ii)] $\exists\, r\in \mathbb{N}^{*} \text{, } J^{r+1} = IJ^{r}$.
+	\end{enumerate}
+\end{madefinition}
+\begin{monexemple}
+		%\\
+		\item[1)] $I$ est une réduction de $I$ lui-même;
+		\item[2)] $A =\mathbb{K}[X,Y]$ avec $\mathbb{K}$ corps.\\
+		$I = (X^2, Y^2)$.\\
+		$J = (X,Y)^2 = (X^2, Y^2, XY) $.\\
+		D'où $I \subset J$.
+		\begin{align*}
+			IJ&= (X^{2},Y^{2})(X,Y)^{2}.\\
+			IJ&= (X^{2},Y^{2})(X^{2},XY,Y^{2}).\\
+			IJ&= (X^{4},Y^{4},X^{3}Y,XY^{3},X^{2}Y^{2}).\\
+		\end{align*}
+		Et \\ 
+		\begin{align*}
+			J^2 &= (X^2X^2, X^2Y^2, X^3Y, Y^2Y^2, Y^3X).\\
+			J^2&= (X^4, Y^4, X^2Y^2, X^3Y, XY^3).
+		\end{align*}
+		Donc $J^{1+1} = J^2 = IJ $ avec $r=1$.\\
+		Par suite $I$ est une réduction de $J$.
+\end{monexemple}
+\begin{maremarque}
+	\label{rem1}
+	$\text{ Pour tout } \, r\geq n$, on a $J^{r+1} = IJ^{r}$.\\
+	D'une manière générale, $I^{m}J^{n}=J^{n+m}, \, \, \text{ pour tout } \, m\in \mathbb{N}$.	
+\end{maremarque}
+
+\begin{maproposition}
+	Soient $A$ un anneau, $I$, $J$ et $K$ trois id\'eaux de $A$ \\ tels que 
+	$I $ est contenu dans $ J $ et $J$ est contenu dans $ K $.\\ Si $I$ est une réduction de $J$ et $J$ est une réduction de $K$ alors $ I \text{est une réduction de }  K $.
+\end{maproposition}
+\begin{proof}
+	Supposons que $I$ est une réduction de $J$ et $J$ est une réduction de $K$.\\
+	$I$ est une réduction de $J$ alors $I $ est contenu dans $ J$ et $\text{il existe } \, n$ appartenant à $ \mathbb{N}^{*}$ tel que $J^{m+1} = IJ^{m}$, de même $J$ est une réduction de $K$ alors $J \subset K$ et $\text{ il existe } \, n$ appartenant à $ \mathbb{N}^{*}$ tel que $K^{n+1} = JK^{n}$.\\
+	Posons $r = mn+n+m \in \mathbb{N}^{*}$.
+	\begin{align*}
+		K^{r+1} = K^{mn+n+m+1}& = (K^{n+1})^{m+1}.\\
+		 & = (K^{n+1})^{m}(K^{n+1}).\\
+		 & = (JK^{n})^{m}(JK^{n}).\\
+		 & = J^{m}K^{nm}JK^{n}.\\
+		 & = J^{m+1}K^{nm+n}.\\
+		 & = J^{m+1}K^{n}K^{nm}.\\
+		 & = IJ^{m}K^{n}K^{nm}.\\
+		 & = I(JK^{n})^{m}K^{n}.\\
+		 & = I(K^{n+1})^{m}K^{n}.\\
+		 & = IK^{mn+n+m}.\\
+		 & = IK^r.          
+	\end{align*}
+	Il existe donc $r $ appartenant à $ \mathbb{N}^{*}$ tel que $K^{r+1} = IK^{r}$ ainsi $I$ est une réduction de $K$.
+\end{proof}
+\begin{monlemme}
+	Soit $I_1, I_2, J_1$ et $J_2$ des idéaux de $A$ alors, \\ si $I_1$ est  une réduction de $J_1$ et $I_2$ est une réduction de $J_2$ alors $I_1+I_2$ est une réduction de $J_1+J_2$.
+\end{monlemme}
+\begin{proof}
+	Supposons que $I_1$ est une réduction de $J_1$ et $I_2$ est une réduction de $J_2$.\\
+	$I_1$ est une réduction de $J_1$ alors $I_1 $ est contenu dans $ J_1$ et $\text{ il existe } \, m \in \mathbb{N^*}$ tel que $J_1^{m+1} = I_1 J_1^m$.\\
+	$I_2$ est une réduction de $J_2$ alors $I_2 $ est contenu dans $ J_2$ et $\text{ il existe } \, n \in \mathbb{N^*}$ tel que $J_2^{n+1} = I_2 J_2^n$.\\
+	Posons $r=m+n \in \mathbb{N^*} $.\\
+	\begin{align*}
+		I_1(J_1+J_2)^{m+n}& = \displaystyle \sum_{k=0}^{m+n}{I_1 J_1^k J_2^{m+n-k}}.\\
+		I_1(J_1+J_2)^{m+n}& = \displaystyle \sum_{k=0}^{m-1}{I_1 J_1^k J_2^{m+n-k}} + \displaystyle \sum_{k=m}^{m+n}{I_1 J_1^k J_2^{m+n-k}}.
+	\end{align*}
+	Or $I_1$ est une réduction de $J_1$ donc$\text{ pour tout } \, k$ supérieur ou égal à $ m$, d'après la remarque \ref{rem1}, on a $J_1^{k+1} = I_1 J_1^{k}.$ Donc
+	\begin{align*}
+		I_1(J_1+J_2)^{m+n}& = \displaystyle \sum_{k=0}^{m-1}{I_1 J_1^k J_2^{m+n-k}} + \displaystyle \sum_{k=m}^{m+n}{J_1^{k+1} J_2^{m+n-k}}.
+	\end{align*}
+	Ainsi donc on a $\displaystyle \sum_{k=m}^{m+n}{J_1^{k+1} J_2^{m+n-k}} $ est contenu dans $  I_1(J_1+J_2)^{m+n}$.\\
+	De façon similaire on montre que $\displaystyle \sum_{k=0}^{m}{J_1^{k} J_2^{m+n-k+1}} $ est contenu dans $  I_2(J_1+J_2)^{m+n}.$\\
+	D'où $\displaystyle \sum_{k=m}^{m+n}{J_1^{k+1} J_2^{m+n-k}} + \displaystyle \sum_{k=0}^{m}{J_1^{k} J_2^{m+n-k+1}} \subset I_1(J_1+J_2)^{m+n} + I_2(J_1+J_2)^{m+n}$.\\ Alors $\displaystyle \sum_{k=0}^{m+n+1}{J_1^{k} J_2^{m+n+1-k}} = (J_1+J_2)^{m+n+1} \subset (I_1+I_2)(J_1+J_2)^{m+n}$.\\
+	Par hypothèse on a $I_1 \subset J_1$ et $I_2 \subset J_2 \text{ alors } I_1+I_2 \subset J_1+J_2$.\\
+	Par suite on a $(I_1+I_2)(J_1+J_2)^{m+n} \subset (J_1+J_2)^{m+n+1}$.\\ Par conséquent $(J_1+J_2)^{m+n+1} = (I_1+I_2)(J_1+J_2)^{m+n}$ , on a donc trouver $r$ tel que $(J_1+J_2)^{r+1} = (I_1+I_2)(J_1+J_2)^{r}$ ce qui fait de $I_1+I_2$  une réduction de $J_1+J_2$.
+\end{proof}
+\begin{maproposition}
+	Soient $A$ un anneau, $I$ un idéal de $A$ et $x \in A$.\\
+	$x$ est entier sur $I$ si et seulement si $I$ est une réduction de $I + (x) = I +xA $.
+\end{maproposition}
+\begin{proof}
+	$(i)$ Supposons que $x$ est entier sur $I$. Alors il existe $n \in \mathbb{N^*}$ tel que $x^n = \displaystyle \sum_{i=1}^{n}{a_i x^{n-i}}$, avec $a_i \in I^i, i=1, \cdots ,n$.\\
+	Montrons que $I$ est une réduction de $I + (x)$.\\
+	On a : $(I+(x))^n = (I+(x))(I+(x))^{n-1}= I(I+(x))^{n-1} + (x)(I+(x))^{n-1}$.\\
+	En prouvant que $(x)(I+(x))^{n-1} \subset I(I+(x))^{n-1}$ on aura,
+	\begin{center}
+		$I(I+(x))^{n} = I(I+(x))^{n-1}$.
+	\end{center}
+	\begin{align*}
+		(x)(I+(x))^{n-1} &= (x)\displaystyle \sum_{i=0}^{n-1}{I^i (x)^{n-1-i}}. \text{ voir proposition } \ref{maprop13}\\ 
+		(x)(I+(x))^{n-1} &= \displaystyle \sum_{i=0}^{n-1}{I^i (x)^{n-i}}.\\
+		(x)(I+(x))^{n-1} &= (x)^n + \displaystyle \sum_{i=1}^{n-1}{I^i (x)^{n-i}}.\\
+		(x)(I+(x))^{n-1} &= (x)^n + I\displaystyle \sum_{i=1}^{n-1}{I^{i-1} (x)^{n-i}}.\\
+		(x)(I+(x))^{n-1} &= (x)^n + I\displaystyle \sum_{i=0}^{n-2}{I^i (x)^{n-1-i}}.
+	\end{align*}
+	Donc $(x)(I+(x))^{n-1} = (x)^n + I\displaystyle \sum_{i=0}^{n-2}{I^i (x)^{n-1-i}} \subset (x)^n +I \displaystyle \sum_{i=0}^{n-1}{I^i (x)^{n-1-i}}$.\\
+	d'où $(x)(I+(x))^{n-1} \subset (x)^n + I(I+(x))^{n-1}$.\\ Et comme, \\$x^n = \displaystyle \sum_{i=1}^{n}{a_i x^{n-i}} \in \displaystyle \sum_{i=1}^{n}{I^i x^{n-i}} \text{ alors } x^n \in I\displaystyle \sum_{i=1}^{n}{I^{i-1} x^{n-i}} = I\displaystyle \sum_{i=0}^{n-1}{I^i x^{n-1-i}} =I(I+(x))^{n-1}.$\\ Alors $(x)^n \in I(I+(x))^{n-1} \text{ alors } (x)^n + I(I+(x))^{n-1} = I(I+(x))^{n-1}$.\\
+	En somme $(x)(I+(x))^{n-1} \subset I(I+(x))^{n-1} \text{ alors } (I+(x))^{n} = I(I+(x))^{n-1}$.\\
+	Par conséquent $I$ est une réduction de $I + (x)$.\\
+	$(ii)$ Supposons que $I$ est une réduction de $I + (x)$.\\
+	Alors $\text{ il existe } \, n \in \mathbb{N^*}$ tel que $(I + (x))^{n+1} = I(I + (x))^{n}$.\\
+	$x^{n+1} \in (I + (x))^{n+1} = I(I + (x))^{n} \text{ alors } x^{n+1} \in I\displaystyle \sum_{i=0}^{n}{I^i (x)^{n-i}} = \displaystyle \sum_{i=0}^{n}{I^{i+1} (x)^{n-i}}$.\\
+	D'où $x^{n+1} \in \displaystyle \sum_{i=1}^{n+1}{I^i (x)^{n+1-i}} \text{ alors } x^{n+1} =  \displaystyle \sum_{i=1}^{n+1}{a_i x^{n+1-i}}$, avec $a_i \in I^i$. Ainsi $x$ est donc entier sur $I$.\\
+\end{proof}
+\begin{maproposition}
+	Soit $A$ un anneau noethérien, $I$ et $J$ deux idéaux de $A$ tels que $I $ est contenu dans $ J$. Les assertions suivantes sont équivalentes: 
+	\begin{enumerate}
+		\item[i] ) $I$ est une réduction de $J$;
+		\item[ii] ) $R(A,J)$ est un $R(A,I)$-module de type fini;
+		\item[iii] ) $R(A,J)$ est entier sur $R(A,I)$;
+		\item[iv] ) $\text{ pour tout } n \in \mathbb{N^*}$, $J^n$ est entier sur $I^n$;
+		\item[v] ) $J$ est entier sur $I$.
+	\end{enumerate}
+\end{maproposition}
+\begin{proof}
+	$i) \implies ii)$ .\\
+	Supposons que $I$ est une réduction de $J$ alors $\text{ il existe } \, n \in \mathbb{N}^{*}$ tel que $J^{n+1} = IJ^{n}$.\\
+	$J^{n+1} = IJ^{n} \text{ alors } \text{ pour tout } r \in \mathbb{N} \, ; J^{n+r} = I^rJ^{n}$.\\
+	Ainsi $J^{n+r} X^{n+r} = I^r X^rJ^{n} X^n \text{ alors } R(A,J) = R(A,I)(JX, \cdots ,J^rX^r)$.\\
+	$R(A,J)$ est donc un $R(A,I)$-module de type fini.\\
+	$ii) \implies iii)$.\\
+	Supposons que $R(A,J)$ est un $R(A,I)$-module de type fini.\\
+	Soit $z \in R(A,J)$,\\
+	$z \in R(A,J) \text{ alors } (R(A,J)[z])$ est un sous-module de $R(A,J)$.\\
+	$A$ est noethérien alors $R(A,I)$ est noethérien, $R(A,J)$ est un $R(A,I)$-module de type fini alors, $R(A,J)$ est un module noethérien.\\
+	$(R(A,J)[z])$ étant un sous-module de $R(A,J)$ qui est noethérien alors $(R(A,J)[z])$ est de type fini. Par suite $z$ est entier sur $R(A,I)$.\\
+	$iii) \implies iv)$.\\
+	Supposons que $R(A,J)$ est entier sur $R(A,I)$.\\
+	Soit $a \in J^n \text{ alors } aX^n \in R(A,J)$, donc $aX^n$ est entier sur $R(A,I)$.\\
+	Ainsi il existe $m \in \mathbb{N^*}$  tel que  $\, (aX^n)^m = \displaystyle \sum_{i=1}^{m}{b_i (aX^n)^{m-i}}$,\\ où $b_i \in I^{ni} X^{ni} \text{ alors } b_i = c_i X^{ni} , c_i \in I^{ni}$.\\
+	$a^m X^{nm} = \displaystyle \sum_{i=1}^{m}{c_i X^{ni} (aX^n)^{m-i}} = \displaystyle \sum_{i=1}^{m}{c_i X^{ni} a^{m-i} X^{mn-ni}} = \displaystyle \sum_{i=1}^{m}{c_i a^{m-i} X^{mn}}$.\\
+	Et donc $a^m X^{nm} = \displaystyle \sum_{i=1}^{m}{c_i a^{m-i} X^{mn}} \text{ alors } a^m = \displaystyle \sum_{i=1}^{m}{c_i a^{m-i}}$ , $c_i \in I^{ni} = (I^n)^i$.\\
+	$J^n$ est ainsi entier sur $I^n$.\\
+	$iv) \implies v)$\\
+	En prenant $n = 1$, alors pour les mêmes raisons que la preuve $iii) \implies iv)$ on a le résultat souhaité à savoir $J$ entier sur $I$.\\
+	$v) \implies i)$\\
+	Supposons que $J$ est entier sur $I$.\\
+	L'anneau $A$ étant noethérien alors l'idéal $J$ est de type fini.\\ Posons $J = (x_1, \cdots ,x_n)$\\
+	$x_1 \in J$ qui est entier sur $I$ donc, $x$ est entier sur $I$ ce qui entraine que l'idéal $I$ soit une réduction de $I + (x_1)$. De même $x_2$ est entier sur $I$ donc sur $I + (x_1)$ ainsi, $I + (x_1)$ devient une réduction de $I + (x_1) + (x_2)$.\\ En répétant le même raisonnement à chaque élément de $J$, on obtient $x_r$ entier sur $I$ donc nécessairement sur $I + (x_1) + \cdots +(x_{r-1})$ ce qui implique que $I + (x_1) + \cdots +(x_{r-1})$ est une réduction de $I + (x_1) + \cdots +(x_{r}) = I+J$.\\
+	On déduit donc que $I$ est une réduction de $J$. 
+\end{proof}
+
+\begin{maproposition}
+	Soient A un anneau, I un idéal de A et x un élément de A. Alors:\\
+	$x$ est entier sur $I$ si et seulement si il existe $J$ un idéal de A de type fini tel que: xJ est contenu dans IJ et pour tout x' élément de A, x'J est égal au module nul entraîne qu'il existe m supérieur ou égal à zéro, tel que $x'x^m = 0$.
+\end{maproposition}
+\begin{moncorollaire}
+	Soient I, J deux idéaux de A. Alors:
+	\[ I'J' \subset (IJ)'.\]
+\end{moncorollaire}
+%\begin{montheoreme}
+%	Soit $A$ un anneau noethérien.
+%	Pour tout idéal $I$ de $A$, il existe un idéal $\hat{I}$ (nécessairement unique) ayant les propriétés suivantes : \\
+%	$(i)$ $I$ est une réduction de $\hat{I}$;\\
+%	$(ii)$ Tout idéal ayant $I$ comme réduction est contenu dans $\hat{I}$.
+%\end{montheoreme}
+%\begin{proof}
+%	Notons $\displaystyle \sum$ l'ensemble de tous les idéaux qui ont $I$ comme réduction. $I$ étant une réduction de lui-même alors, $I \in \displaystyle \sum$ donc $\displaystyle \sum \neq \emptyset$. Puisque la condition de maximalité des idéaux est valable dans notre anneau, on peut trouver un idéal $\hat{I} \in \displaystyle \sum$ et qui est maximal dans $\displaystyle \sum$.\\
+%	Soit $I_1 \in \displaystyle \sum$, alors $I$ est une réduction de $I_1$ et $I$ est une réduction de $\hat{I}$. Ainsi comme $I+I=I$ est une réduction de $I_1+\hat{I}$. Cela montre que $I_1+\hat{I} \in \displaystyle \sum$. Mais $\hat{I} \subset I_1+\hat{I}$ d'où $\hat{I} = I_1+\hat{I}$, par choix de $\hat{I}$ donc $I_1 \subset \hat{I}$. Ce qui achève la preuve.
+%\end{proof} 
+%\begin{moncorollaire}
+%	Soient $A$ un anneau noethérien et $I$, $J$ deux idéaux de $A$. Si $I$ est une réduction de $J$, alors $\hat{I} = \hat{J}$.
+%\end{moncorollaire}
+%\begin{proof}
+%	D'une part $I$ est une réduction de $J$ et $J$ est une réduction de $\hat{J}$ alors, $I$ est une réduction de $\hat{J}$ par conséquent $\hat{J} \subset \hat{I}$, par le Théorème précédent. D'autre part $I \subset J \subset \hat{J} \subset \hat{I}$ et comme $I$ est une réduction de $\hat{I}$, alors il existe $n \in \mathbb{N^*}$ tel que $\hat{I}^{n+1} = I \hat{I}^n$.\\
+%	$I \subset J \Rightarrow I \hat{I}^n \subset J \hat{I}^n$ or $\hat{I}^{n+1} = I \hat{I}^n$ donc $\hat{I}^{n+1} \subset J \hat{I}^n$. De plus $J \subset \hat{I} \Rightarrow  J \hat{I}^n \subset \hat{I}^{n+1}$, ainsi $\hat{I}^{n+1} = J \hat{I}^n$ par conséquent $J$ devient également une réduction de $\hat{I}$. Il s'ensuit que $\hat{I} \subset \hat{J}$, on obtient donc le résultat souhaité.
+%\end{proof}
+
+
+\subsection{Réduction minimale d'un idéal}
+La notion d'idéal basique a été introduite et étudiée par Northcott et Rees \cite{No}.
+\begin{madefinition}
+	Un idéal $I$ de l'anneau local noethérien $(A,m)$ est basique si la seule réduction de $I$ est $I$ lui-m\^{e}me. 
+	Northcott et Rees ont aussi défini la notion de réduction minimale d'un idéal $J$:
+	
+	Un idéal $I$ est une réduction minimale de $J$ si $I$ est une réduction de $J$ et si I est $minimal$ au sens de l'inclusion parmi l'ensemble des réductions de J. 
+\end{madefinition}
+\begin{maremarque}
+	Bien qu'on puisse parler de réduction minimale pour un idéal quelconque sur un anneau local, cela n'est pas possible pour toutes les filtrations. 
+%	On montre dans \cite{Di3} avec cet exemple que toutes les filtrations n'admettent pas de réduction minimale.
+%\end{maremarque}
+%\begin{monexemple}
+%	Soient l'anneau $A = \mathbb{K}\left[ X\right]$ où $\mathbb{K}$ est un corps et $I = (X)$ un idéal de $A$.\\
+%	Considérons la filtration définie par $I_{2n} = I_{2n-1} = I^n, \text{ pour tout } n \in \mathbb{N}$.\\
+%	Montrons que $f$ est une filtration noethérienne.\\
+%	$\bullet$La filtration $f$ est fortement AP car, en prenant $k = 2$ on a: $I_{2n} = I^n = I_2^n$.\\
+%	L’anneau $A$ étant noethérien alors la filtration $f$ est noethérienne.\\
+%	$\bullet$ Supposons que la filtration $f$ est fortement noethérienne alors, il existe $k \geq 1$ tel que pour tous $m, n \geq k$ on a: $I_{m+n} = I_m I_n$.\\
+%	Posons $m = 2k+1$ et $n = 2p+1$ où $p \geq k$.\\
+%	$I_{m+n} = I_{2k+1+2p+1} = I_{2(k+p+1)} = I^{k+p+1}$.\\
+%	$I_m I_n =  I_{2k+1}  I_{2p+1} =  I_{2(k+1)-1}  I_{2(p+1)-1} = I^{k+1} I^{p+1} = I^{k+p+2}.$
+%	\begin{align*}
+%		I_{m+n} = I_m I_n &\text{ alors } I^{k+p+1} = I^{k+p+2}.\\
+%		I_{m+n} = I_m I_n & \text{ ainsi } (X)^{k+p+2} = (X)^{k+p+1}.\\
+%		I_{m+n} = I_m I_n &\text{ d'où } \exists Q \in A,\; QX^{k+p+2} = X^{k+p+1}.\\
+%		I_{m+n} = I_m I_n &\text{ par suite } XQ = 1_A.
+%	\end{align*}
+%	Ainsi on a $X$ inversible ce qui est absurde, par suite la filtration $f$ n'est pas fortement  noethérienne. Comme la filtration $f$ n'est pas fortement noethérienne alors elle n'est pas $I$-bonne.\\ De plus il n'existe pas d'entier $r \geq 1$ tel que $I_r$ soit idempotent, par conséquent notre filtration $f$ n'admet pas de réduction minimale.
+%\end{monexemple}
+%\begin{maremarque}
+	On prouve dans \cite{Di2} que la réduction minimale des filtrations $I$-bonnes existe toujours dans un anneau local noethérien. Ce qui n'est pas le cas en générale pour une filtration quelconque.
+\end{maremarque}
+%Ces notions s'étendent sans difficulté aux filtrations noethériennes d'un anneau noethérien $A$, non nécessairement local \cite{Di2}. 
+%
+%Les questions naturelles qui se posent sont alors les suivantes :
+%\begin{enumerate}
+%	\item[(a)] Quelles sont les filtrations basiques de $A$ si elles existent ?
+%	\item[(b)] Toute filtration de $A$ admet-elle une réduction minimale?
+%\end{enumerate}
+%
+%Nous avons obtenu une caractérisation des filtrations basiques et avons montré que la réponse à la question (b) est négative.
+%
+%Pour (a) nous avons obtenu le résultat suivant:
+%\begin{maproposition}
+%	Une filtration noethérienne $f $ de l'anneau noethérien A est basique si et seulement si $f$ est $I-adique$ avec $I$ idempotent ($I^{2}=I$).
+%\end{maproposition}
+%\begin{proof}
+%	Pour le voir, considérons une filtration $f=(I_{n})$ noethérienne et basique. 
+%	
+%	Il existe alors un entier $k\geq 1$ tel que pour tout entier $n\geq k,$ on
+%	ait $I_{n+k}=I_{k}I_{n}.$ Considérons la filtration $h=(H_{n})$ de $A$ définie par:
+%	
+%	$H_{n}=\left\{ 
+%	\begin{array}{c}
+%		I_{k-1}\text{ si }1\leq n\leq k-1 \\ 
+%		I_{n}\text{ pour }n\geq k
+%	\end{array}
+%	\right. $ 
+%	
+%	On a alors pour tout $n\geq k$, $I_{n+k}=I_{k}H_{n},$ et par conséquent $h$ est une réduction de $f.$
+%	
+%	Comme $f$ est basique, on en déduit que $I_{n}=I_{k}$ pour tout $n.$
+%	
+%	D'autre part, $I_{2k}=I_{k}^{2}$ donc $f=f_{I}$ avec $I=I_{k}$ et $I^{2}=I.$
+%	
+%	Réciproquement, si $f$ est $I-adique$ avec $I=I^{2}$ et si $h=(H_{n})$ est une réduction de $f,$ on a pour tout $n\geq 1,$ $I=I^{n}$ et $
+%	H_{n}\subset I.$
+%	
+%	De plus $h$ étant une réduction de $f,$ il existe un entier $k\geq 1$
+%	tel que $I=I^{k+n}=I^{k}H_{n}\subset H_{n}\subset I$ pour tout $n\geq k.$
+%	
+%	D'où $\text{ pour tout } n\geq k$ ,$I=H_{n}.$ Or pour tout entier $n$ tel que $1\leq n\leq k-1,$ on a $H_{k}=I\subset H_{n}\subset I.$
+%	
+%	D'où $H_{n}=I,$ $f_{I}=h$ et $f_{I}$ est basique.
+%\end{proof}
+%
+%Concernant la question (b), nous avons obtenu le résultat suivant:
+%
+%\begin{maproposition}
+%	Une filtration noethérienne $f=(I_{n})$ de l'anneau noethérien $A$
+%	admet une réduction minimale si et seulement s'il existe un entier $r\geq 1$ tel que $I_{r}$ soit un idéal idempotent.
+%\end{maproposition}
+%\begin{proof}
+%	Il est facile de voir que la condition est nécessaire. Supposons en effet que $h=(H_{n})$ soit une réduction minimale de $f$. Alors $f $ est noethérienne et basique et d'après le résultat précédent énonce plus haut, il existe un idéal idempotent $I$ tel que $h=f_{I}$. 
+%	
+%	Or l'une des caractérisations de réduction d'une filtration sur une
+%	autre assure l'existence d'un entier $N\geq 1$ tel que $I_{n}^{2}=I_{n}H_{n}=I_{n}I$ pour tout $n\geq N$. 
+%	
+%	De plus, $f$ étant noethérienne, elle est fortement $A.P.$ et il
+%	existe un entier $k\geq N$ tel que $I_{nk}=I_{k}^{n}$ pour tout entier $n$. 
+%	
+%	Ainsi $I_{2k}=I_{k}^{2}=I_{k}I$ et \ $I_{2k}^{2}=I_{2k}I=I_{k}I^{2}=I_{k}I=I_{2k}$ donc $I_{2k}$ est idempotent.
+%	
+%	La réciproque est plus technique et nous renvoyons aux références citées plus haut. La preuve de la réciproque demande l'utilisation de critères assurant que l'anneau de Rees d'une filtration $g$ soit entier (respectivement soit une algèbre de type fini) sur l'anneau de Rees d'une filtration $f.$ Or, suivant les références, les auteurs ont utilisé soit l'anneau de Rees classique soit l'anneau de Rees généralisé associé à une filtration pour définir et caractériser la dépendance intégrale ou la dépendance intégrale forte d'une filtration sur une autre. 
+%	
+%	Pour montrer que les propriétés utilisées, portant tantôt sur l'un ou l'autre des anneaux de
+%	Rees sont équivalentes, nous avons montré les résultats suivants:
+%	
+%	Étant données deux filtrations $f,g$ de A vérifiant $f\leq g$, on a:
+%	\begin{enumerate}
+%		\item[(i)]  $\mathcal{R}(A,g)$ est entier sur $\mathcal{R}(A,f)\text{ si et seulement si } $ R(A,g) est entier	sur R(A,f);
+%		\item[(ii)] $\mathcal{R}(A,g)$ est entier sur $\mathcal{R}(A,f)-$ algèbre de type fini $\text{ si et seulement si } $ R(A,g) est entier sur $R(A,f)-algèbre$ de type fini.
+%	\end{enumerate}
+%	Concernant la noethérianité des anneaux de Rees, une preuve astucieuse de l'équivalence entre la noethérianité de l'anneau $\mathcal{R}(A,f)$ et celle de l'anneau $R(A,f)$ pour toute filtration $f$ de l'anneau noethérien $A$ a été donnée dans \cite{Ra2}. Nous l'exposons brièvement ici. Il est clair que si l'anneau de Rees de $f$ est noethérien, il en est de m\^{e}me de son anneau de Rees généralisé. La réciproque est donc triviale. Par conséquent, l'anneau de Rees $R(A,f)$ de $f$ est noethérien.
+%	
+%\end{proof}
+
+

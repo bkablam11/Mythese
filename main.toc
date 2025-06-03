@@ -1,0 +1,23 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {section}{\numberline {2}R\IeC {\'e}sum\IeC {\'e} de l\IeC {\textquoteright }article}{3}{section.2}
+\contentsline {section}{\numberline {3}Notions principales}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Matrice sym\IeC {\'e}trique d\IeC {\'e}finie positive}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Maximum de vraisemblance (MLE)}{4}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Compl\IeC {\'e}ment de Schur}{5}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Optimisation sous contraintes}{5}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}M\IeC {\'e}thodes classiques compar\IeC {\'e}es}{5}{subsection.3.5}
+\contentsline {section}{\numberline {4}Description de l\IeC {\textquoteright }algorithme cyclique}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}Principe de l'algorithme cyclique propos\IeC {\'e}}{5}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Fonctionnement d\IeC {\'e}taill\IeC {\'e}}{6}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Autres notions li\IeC {\'e}es \IeC {\`a} l'algorithme}{6}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Loi ou distribution multinomiale (cas particulier: loi binomiale)}{6}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Gradient}{7}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Newton-Raphson (approfondissement)}{7}{subsubsection.4.3.3}
+\contentsline {section}{\numberline {5}Applications et r\IeC {\'e}sultats}{7}{section.5}
+\contentsline {section}{\numberline {6}Discussion}{7}{section.6}
+\contentsline {section}{\numberline {7}Conclusion}{7}{section.7}
+\contentsline {section}{\numberline {8}R\IeC {\'e}f\IeC {\'e}rences}{8}{section.8}
+\contentsline {section}{\numberline {9}Annexes}{8}{section.9}
+\contentsline {subsection}{\numberline {9.1}Liens pour approfondir les notions}{8}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Questions li\IeC {\'e}es}{9}{subsection.9.2}

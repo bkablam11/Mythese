@@ -1,0 +1,22 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{R\351sum\351 de l\220article}{}% 2
+\BOOKMARK [1][-]{section.3}{Notions principales}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Matrice sym\351trique d\351finie positive}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Maximum de vraisemblance \(MLE\)}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Compl\351ment de Schur}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Optimisation sous contraintes}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.5}{M\351thodes classiques compar\351es}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Description de l\220algorithme cyclique}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Principe de l'algorithme cyclique propos\351}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Fonctionnement d\351taill\351}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.3}{Autres notions li\351es \340 l'algorithme}{section.4}% 12
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Loi ou distribution multinomiale \(cas particulier: loi binomiale\)}{subsection.4.3}% 13
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Gradient}{subsection.4.3}% 14
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Newton-Raphson \(approfondissement\)}{subsection.4.3}% 15
+\BOOKMARK [1][-]{section.5}{Applications et r\351sultats}{}% 16
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 17
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 18
+\BOOKMARK [1][-]{section.8}{R\351f\351rences}{}% 19
+\BOOKMARK [1][-]{section.9}{Annexes}{}% 20
+\BOOKMARK [2][-]{subsection.9.1}{Liens pour approfondir les notions}{section.9}% 21
+\BOOKMARK [2][-]{subsection.9.2}{Questions li\351es}{section.9}% 22
